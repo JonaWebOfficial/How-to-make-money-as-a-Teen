@@ -10,88 +10,208 @@
 <body>
 
 <header>
-    <h1>💰 Teen Money</h1>
-    <p>Safe and realistic ways for teenagers to make money</p>
+    <div class="logo">💰 Teen <span>Money</span></div>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Ways to Make Money</a>
+        <a href="#">Money Tips</a>
+        <a href="#">About</a>
+    </nav>
+    <button class="quiz-button">Start Quiz →</button>
 </header>
+
+<section class="hero">
+    <h1>Ways to Make Money</h1>
+    <p>Explore different ways teenagers can earn money.</p>
+
+    <div class="difficulty-info">
+        <h3>About the Difficulty Level</h3>
+        <p>We rate each method from 1 to 10 based on how difficult it is to get started.</p>
+        <div class="scale">
+            <span>1 = Very Easy</span>
+            <div class="scale-bar"></div>
+            <span>10 = Very Hard</span>
+        </div>
+    </div>
+</section>
 
 <main class="container">
 
-    <div class="card">
-        <h2>🧹 Washing Cars</h2>
-        <p>Wash cars for people in your neighborhood.</p>
-
-        <div class="difficulty">
-            <strong>Difficulty: 2/10</strong>
-            <div class="bar">
-                <div class="fill" style="width: 20%;"></div>
-            </div>
-            <span>Very Easy</span>
-        </div>
+    <div class="sort">
+        Sort by:
+        <select>
+            <option>Difficulty (Low to High)</option>
+            <option>Difficulty (High to Low)</option>
+        </select>
     </div>
 
-    <div class="card">
-        <h2>🐶 Dog Walking</h2>
-        <p>Walk dogs for people who are busy or at work.</p>
+    <!-- DOG WALKING -->
+    <div class="money-card">
+
+        <div class="icon dog">🐶</div>
+
+        <div class="description">
+            <h2>Dog Walking</h2>
+            <p>Walk dogs in your neighborhood. Many people need help with their pets!</p>
+        </div>
+
+        <div class="earn">
+            💵 <span>Earn:</span>
+            <strong>$10 - $20 / walk</strong>
+        </div>
+
+        <div class="time">
+            🕐 <span>Time:</span>
+            <strong>1 - 2 hours</strong>
+        </div>
 
         <div class="difficulty">
-            <strong>Difficulty: 2/10</strong>
-            <div class="bar">
-                <div class="fill" style="width: 20%;"></div>
+            <b>Difficulty</b>
+            <div class="number green">2 <small>/ 10</small></div>
+
+            <div class="difficulty-bar">
+                <div class="bar green-bar" style="width:20%"></div>
             </div>
-            <span>Very Easy</span>
+
+            <label class="easy">Very Easy</label>
         </div>
+
     </div>
 
-    <div class="card">
-        <h2>🌱 Gardening</h2>
-        <p>Help neighbors with simple gardening jobs.</p>
+
+    <!-- CAR WASHING -->
+    <div class="money-card">
+
+        <div class="icon car">🚗</div>
+
+        <div class="description">
+            <h2>Car Washing</h2>
+            <p>Wash cars for money. You can do this for neighbors or people nearby.</p>
+        </div>
+
+        <div class="earn">
+            💵 <span>Earn:</span>
+            <strong>$15 - $30 / car</strong>
+        </div>
+
+        <div class="time">
+            🕐 <span>Time:</span>
+            <strong>1 - 2 hours</strong>
+        </div>
 
         <div class="difficulty">
-            <strong>Difficulty: 3/10</strong>
-            <div class="bar">
-                <div class="fill" style="width: 30%;"></div>
+            <b>Difficulty</b>
+            <div class="number orange">3 <small>/ 10</small></div>
+
+            <div class="difficulty-bar">
+                <div class="bar orange-bar" style="width:30%"></div>
             </div>
-            <span>Easy</span>
+
+            <label class="easy">Easy</label>
         </div>
+
     </div>
 
-    <div class="card">
-        <h2>🎥 Video Editing</h2>
-        <p>Edit videos for YouTubers or other creators.</p>
+
+    <!-- VIDEO EDITING -->
+    <div class="money-card">
+
+        <div class="icon computer">💻</div>
+
+        <div class="description">
+            <h2>Video Editing</h2>
+            <p>Edit videos for YouTubers or businesses. Great way to earn online!</p>
+        </div>
+
+        <div class="earn">
+            💵 <span>Earn:</span>
+            <strong>$20 - $100 / video</strong>
+        </div>
+
+        <div class="time">
+            🕐 <span>Time:</span>
+            <strong>2 - 5 hours</strong>
+        </div>
 
         <div class="difficulty">
-            <strong>Difficulty: 6/10</strong>
-            <div class="bar">
-                <div class="fill" style="width: 60%;"></div>
+            <b>Difficulty</b>
+            <div class="number orange">6 <small>/ 10</small></div>
+
+            <div class="difficulty-bar">
+                <div class="bar orange-bar" style="width:60%"></div>
             </div>
-            <span>Medium</span>
+
+            <label class="medium">Medium</label>
         </div>
+
     </div>
 
-    <div class="card">
-        <h2>🎮 Making Roblox Games</h2>
-        <p>Create Roblox games and potentially earn money from them.</p>
+
+    <!-- ROBLOX -->
+    <div class="money-card">
+
+        <div class="icon gaming">🎮</div>
+
+        <div class="description">
+            <h2>Making Roblox Games</h2>
+            <p>Create Roblox games and potentially earn money from your games.</p>
+        </div>
+
+        <div class="earn">
+            💵 <span>Earn:</span>
+            <strong>$50 - $1000+</strong>
+        </div>
+
+        <div class="time">
+            🕐 <span>Time:</span>
+            <strong>Many hours</strong>
+        </div>
 
         <div class="difficulty">
-            <strong>Difficulty: 8/10</strong>
-            <div class="bar">
-                <div class="fill" style="width: 80%;"></div>
+            <b>Difficulty</b>
+            <div class="number red">8 <small>/ 10</small></div>
+
+            <div class="difficulty-bar">
+                <div class="bar red-bar" style="width:80%"></div>
             </div>
-            <span>Hard</span>
+
+            <label class="hard">Hard</label>
         </div>
+
     </div>
 
-    <div class="card">
-        <h2>📺 YouTube</h2>
-        <p>Create videos and build an audience over time.</p>
+
+    <!-- YOUTUBE -->
+    <div class="money-card">
+
+        <div class="icon youtube">▶️</div>
+
+        <div class="description">
+            <h2>YouTube Channel</h2>
+            <p>Make videos about topics you enjoy and build an audience.</p>
+        </div>
+
+        <div class="earn">
+            💵 <span>Earn:</span>
+            <strong>$100 - $5000+</strong>
+        </div>
+
+        <div class="time">
+            🕐 <span>Time:</span>
+            <strong>Many hours</strong>
+        </div>
 
         <div class="difficulty">
-            <strong>Difficulty: 9/10</strong>
-            <div class="bar">
-                <div class="fill" style="width: 90%;"></div>
+            <b>Difficulty</b>
+            <div class="number red">9 <small>/ 10</small></div>
+
+            <div class="difficulty-bar">
+                <div class="bar red-bar" style="width:90%"></div>
             </div>
-            <span>Very Hard</span>
+
+            <label class="very-hard">Very Hard</label>
         </div>
+
     </div>
 
 </main>
