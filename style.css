@@ -2,28 +2,43 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background: #f7f9fc;
+    background: #f6f9fc;
     color: #14213d;
 }
 
-/* HEADER */
+
+/* ================= HEADER ================= */
 
 header {
-    height: 80px;
-    background: #101b33;
+    min-height: 78px;
+    background: #10172f;
     color: white;
+
     display: flex;
     align-items: center;
+
     padding: 0 5%;
-    gap: 40px;
+
+    gap: 35px;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .logo {
+    color: white;
+    text-decoration: none;
     font-size: 25px;
     font-weight: bold;
+
     margin-right: auto;
 }
 
@@ -33,13 +48,17 @@ header {
 
 nav {
     display: flex;
-    gap: 35px;
+    align-items: center;
+    gap: 32px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
+    font-size: 17px;
     font-weight: bold;
+
+    transition: 0.2s;
 }
 
 nav a:hover {
@@ -47,57 +66,105 @@ nav a:hover {
 }
 
 .quiz-button {
-    background: #18b957;
-    color: white;
     border: none;
-    padding: 13px 25px;
-    border-radius: 7px;
-    font-size: 15px;
+    background: #10c95b;
+    color: white;
+
+    padding: 14px 24px;
+
+    border-radius: 8px;
+
+    font-size: 16px;
     font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
 }
 
-/* HERO */
+.quiz-button:hover {
+    background: #0eae4f;
+    transform: translateY(-2px);
+}
+
+
+/* ================= HERO ================= */
 
 .hero {
-    padding: 55px 5%;
+    min-height: 230px;
+
     background: #f4f8fc;
-    position: relative;
+
+    padding: 45px 5%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 40px;
+
+    border-bottom: 1px solid #e1e7ef;
+}
+
+.hero-text {
+    max-width: 550px;
 }
 
 .hero h1 {
-    font-size: 44px;
-    margin: 0 0 10px;
+    margin: 0 0 12px;
+
+    font-size: 45px;
 }
 
 .hero p {
+    margin: 0;
+
     font-size: 20px;
+
     color: #526174;
+
+    line-height: 1.5;
 }
 
+
+/* ================= DIFFICULTY INFO ================= */
+
 .difficulty-info {
-    position: absolute;
-    right: 5%;
-    top: 30px;
-    width: 430px;
+    width: 440px;
+
     background: white;
-    padding: 20px;
+
+    padding: 22px;
+
     border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
 }
 
 .difficulty-info h3 {
-    margin-top: 0;
+    margin: 0 0 8px;
+}
+
+.difficulty-info p {
+    color: #526174;
+
+    line-height: 1.5;
+
+    font-size: 14px;
 }
 
 .scale {
     display: flex;
     align-items: center;
+
     gap: 10px;
-    font-size: 13px;
+
+    font-size: 12px;
+    font-weight: bold;
 }
 
 .scale span:first-child {
-    color: #19a953;
+    color: #16a34a;
 }
 
 .scale span:last-child {
@@ -106,67 +173,136 @@ nav a:hover {
 
 .scale-bar {
     flex: 1;
+
     height: 10px;
-    border-radius: 10px;
+
+    border-radius: 20px;
+
     background: linear-gradient(
         to right,
-        #20b957,
+        #16b957,
         #f5c518,
         #ff8c00,
         #ef233c
     );
 }
 
-/* MAIN */
+
+/* ================= CONTAINER ================= */
 
 .container {
-    max-width: 1200px;
-    margin: 25px auto;
+    max-width: 1250px;
+
+    margin: 35px auto;
+
     padding: 0 20px;
 }
 
+
+/* ================= SECTION TOP ================= */
+
+.section-top {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 18px;
+}
+
+.section-top h2 {
+    margin: 0 0 5px;
+}
+
+.section-top p {
+    margin: 0;
+
+    color: #65748a;
+}
+
+
+/* ================= SORT ================= */
+
 .sort {
-    text-align: right;
-    margin-bottom: 12px;
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
     font-weight: bold;
 }
 
 .sort select {
-    padding: 10px 15px;
-    border: 1px solid #d5dce5;
-    border-radius: 8px;
     background: white;
+
+    border: 1px solid #d5dce5;
+
+    border-radius: 8px;
+
+    padding: 11px 14px;
+
+    font-size: 14px;
+
+    cursor: pointer;
 }
 
-/* CARDS */
+
+/* ================= MONEY CARDS ================= */
 
 .money-card {
     min-height: 150px;
+
     background: white;
+
     border: 1px solid #e1e7ef;
+
     border-radius: 17px;
-    margin-bottom: 12px;
+
+    margin-bottom: 13px;
+
     padding: 20px;
+
     display: grid;
-    grid-template-columns: 80px 1.5fr 1fr 1fr 1.2fr;
+
+    grid-template-columns:
+        80px
+        1.6fr
+        1fr
+        1fr
+        1.2fr;
+
     align-items: center;
+
     gap: 20px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.04);
+
+    transition: 0.2s;
 }
 
 .money-card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 7px 20px rgba(0,0,0,0.08);
-    transition: 0.2s;
+
+    box-shadow:
+        0 8px 22px rgba(0, 0, 0, 0.08);
 }
+
+
+/* ================= ICONS ================= */
 
 .icon {
     width: 80px;
     height: 80px;
+
     border-radius: 13px;
+
     display: flex;
-    align-items: center;
+
     justify-content: center;
+    align-items: center;
+
     font-size: 42px;
 }
 
@@ -176,6 +312,10 @@ nav a:hover {
 
 .car {
     background: #fff0c7;
+}
+
+.garden {
+    background: #dcfce7;
 }
 
 .computer {
@@ -190,60 +330,76 @@ nav a:hover {
     background: #ffdce5;
 }
 
+
+/* ================= DESCRIPTION ================= */
+
 .description h2 {
-    margin: 0 0 10px;
+    margin: 0 0 9px;
+
     font-size: 21px;
 }
 
 .description p {
     margin: 0;
+
     color: #526174;
-    line-height: 1.5;
+
+    line-height: 1.45;
 }
+
+
+/* ================= EARNINGS ================= */
 
 .earn,
 .time {
-    color: #4b596d;
+    color: #526174;
 }
 
 .earn span,
 .time span {
     display: block;
+
     margin-bottom: 8px;
 }
 
 .earn strong {
-    display: block;
     color: #16a34a;
+
     font-size: 16px;
 }
 
 .time strong {
-    display: block;
     color: #26364d;
+
     font-size: 16px;
 }
 
-/* DIFFICULTY */
+
+/* ================= DIFFICULTY ================= */
 
 .difficulty {
     border-left: 1px solid #e0e5ec;
+
     padding-left: 25px;
 }
 
 .difficulty b {
     display: block;
+
     margin-bottom: 5px;
 }
 
 .number {
-    font-size: 27px;
+    font-size: 28px;
+
     font-weight: bold;
+
     margin-bottom: 5px;
 }
 
 .number small {
     color: #26364d;
+
     font-size: 15px;
 }
 
@@ -261,14 +417,19 @@ nav a:hover {
 
 .difficulty-bar {
     width: 100%;
+
     height: 9px;
+
     background: #e7eaf0;
+
     border-radius: 10px;
+
     overflow: hidden;
 }
 
 .bar {
     height: 100%;
+
     border-radius: 10px;
 }
 
@@ -286,10 +447,15 @@ nav a:hover {
 
 .difficulty label {
     display: inline-block;
+
     padding: 5px 12px;
+
     border-radius: 20px;
+
     margin-top: 7px;
+
     font-size: 12px;
+
     font-weight: bold;
 }
 
@@ -309,31 +475,235 @@ nav a:hover {
     color: #ef2347;
 }
 
-/* PHONE */
 
-@media (max-width: 900px) {
+/* ================= EXTRA SECTIONS ================= */
+
+.extra-section {
+    background: white;
+
+    margin-top: 35px;
+
+    padding: 35px;
+
+    border-radius: 17px;
+
+    border: 1px solid #e1e7ef;
+
+    box-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.05);
+}
+
+.extra-section h2 {
+    margin-top: 0;
+}
+
+.extra-section > p {
+    color: #526174;
+
+    line-height: 1.6;
+}
+
+.tips-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+
+    margin-top: 25px;
+}
+
+.tip {
+    background: #f6f9fc;
+
+    padding: 20px;
+
+    border-radius: 12px;
+}
+
+.tip h3 {
+    margin-top: 0;
+}
+
+.tip p {
+    color: #526174;
+
+    line-height: 1.5;
+}
+
+.small-note {
+    font-size: 13px;
+}
+
+
+/* ================= QUIZ ================= */
+
+.quiz-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(10, 18, 40, 0.7);
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    z-index: 1000;
+
+    padding: 20px;
+}
+
+.quiz-overlay.show {
+    display: flex;
+}
+
+.quiz-box {
+    position: relative;
+
+    background: white;
+
+    width: 100%;
+
+    max-width: 500px;
+
+    padding: 35px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+.quiz-box h2 {
+    margin-top: 0;
+}
+
+.quiz-box p {
+    color: #526174;
+
+    line-height: 1.5;
+}
+
+.quiz-box label {
+    display: block;
+
+    font-weight: bold;
+
+    margin-top: 25px;
+
+    margin-bottom: 8px;
+}
+
+.quiz-box select {
+    width: 100%;
+
+    padding: 13px;
+
+    border: 1px solid #d5dce5;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+}
+
+.close-quiz {
+    position: absolute;
+
+    top: 15px;
+    right: 15px;
+
+    border: none;
+
+    background: #f1f3f6;
+
+    width: 35px;
+    height: 35px;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    font-size: 18px;
+}
+
+.quiz-submit {
+    width: 100%;
+
+    margin-top: 20px;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #10b957;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+#quizResult {
+    margin-top: 20px;
+
+    padding: 15px;
+
+    border-radius: 10px;
+
+    background: #f0fdf4;
+
+    color: #166534;
+
+    font-weight: bold;
+
+    display: none;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 950px) {
 
     header {
-        height: auto;
-        padding: 20px;
+        padding: 18px 20px;
+
         flex-wrap: wrap;
     }
 
     nav {
         order: 3;
+
         width: 100%;
+
         justify-content: center;
+
         flex-wrap: wrap;
+
+        gap: 18px;
+    }
+
+    .hero {
+        flex-direction: column;
+
+        align-items: stretch;
     }
 
     .difficulty-info {
-        position: static;
         width: 100%;
-        margin-top: 30px;
     }
 
     .money-card {
-        grid-template-columns: 70px 1fr;
+        grid-template-columns:
+            70px
+            1fr;
     }
 
     .earn,
@@ -344,6 +714,66 @@ nav a:hover {
 
     .difficulty {
         border-left: none;
+
+        border-top: 1px solid #e0e5ec;
+
         padding-left: 0;
+
+        padding-top: 15px;
+    }
+
+    .tips-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    header {
+        justify-content: center;
+    }
+
+    .logo {
+        margin-right: 0;
+    }
+
+    .quiz-button {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .section-top {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 15px;
+    }
+
+    .sort {
+        justify-content: space-between;
+    }
+
+    .money-card {
+        grid-template-columns: 1fr;
+    }
+
+    .icon {
+        width: 70px;
+        height: 70px;
+    }
+
+    .earn,
+    .time,
+    .difficulty {
+        grid-column: 1;
+    }
+
+    .difficulty {
+        border-top: 1px solid #e0e5ec;
     }
 }
