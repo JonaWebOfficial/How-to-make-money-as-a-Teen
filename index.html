@@ -4,69 +4,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Teen Money | Make Money as a Teenager</title>
+    <meta name="description"
+          content="Teen Money - discover realistic ways to earn money and learn useful skills as a teenager.">
+
+    <title>Teen Money | Make Money as a Teen</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- ================= NAVIGATION ================= -->
+<!-- ================= HEADER ================= -->
 
-<header>
+<header class="header">
 
     <a href="#home" class="logo">
-        💰 Teen <span>Money</span>
+        💰 <span>Teen</span>Money
     </a>
 
-    <nav>
+    <nav class="nav" id="nav">
+
         <a href="#home">Home</a>
-        <a href="#money">Ideas</a>
+        <a href="#ideas">Ideas</a>
         <a href="#calculator">Calculator</a>
         <a href="#tips">Tips</a>
-        <a href="#about">About</a>
+
     </nav>
 
-    <div class="header-buttons">
+    <div class="header-actions">
 
-        <button id="themeButton" class="icon-button" title="Dark mode">
+        <button
+            id="themeButton"
+            class="icon-button"
+            aria-label="Toggle dark mode">
             🌙
         </button>
 
-        <button id="startQuiz" class="quiz-button">
+        <button
+            id="openQuiz"
+            class="header-quiz">
             🎯 Find My Job
         </button>
 
     </div>
+
+    <button
+        id="mobileMenu"
+        class="mobile-menu"
+        aria-label="Open menu">
+        ☰
+    </button>
 
 </header>
 
 
 <!-- ================= HERO ================= -->
 
-<section class="hero" id="home">
+<section id="home" class="hero">
 
-    <div class="hero-content">
+    <div class="hero-text">
 
-        <span class="badge">🚀 Teen Money Guide</span>
+        <div class="badge">
+            🚀 Teen Money Guide
+        </div>
 
         <h1>
-            Find Ways to
-            <span>Make Money</span>
+            Find a way to
+            <span>earn & learn.</span>
         </h1>
 
         <p>
-            Explore realistic ways teenagers can earn money,
-            learn useful skills and start working toward their goals.
+            Discover realistic ways to make money,
+            compare different ideas and find something
+            that matches your interests.
         </p>
 
         <div class="hero-buttons">
 
-            <button class="primary-button" id="heroQuiz">
+            <button
+                id="heroQuiz"
+                class="primary-button">
                 🎯 Find My Best Option
             </button>
 
-            <a href="#money" class="secondary-button">
+            <a
+                href="#ideas"
+                class="secondary-button">
                 Explore Ideas ↓
             </a>
 
@@ -75,8 +98,8 @@
         <div class="hero-stats">
 
             <div>
-                <strong>6+</strong>
-                <span>Ideas</span>
+                <strong id="ideaCount">6+</strong>
+                <span>Money Ideas</span>
             </div>
 
             <div>
@@ -85,8 +108,8 @@
             </div>
 
             <div>
-                <strong>100%</strong>
-                <span>Free</span>
+                <strong>Free</strong>
+                <span>To Explore</span>
             </div>
 
         </div>
@@ -94,39 +117,44 @@
     </div>
 
 
-    <div class="hero-card">
+    <!-- JOB OF THE DAY -->
 
-        <div class="hero-card-top">
-            <span>⭐ Featured</span>
-            <span>Easy Start</span>
+    <div class="featured-card">
+
+        <div class="featured-top">
+
+            <span>⭐ JOB OF THE DAY</span>
+
+            <span class="featured-label">
+                Beginner Friendly
+            </span>
+
         </div>
 
-        <div class="big-icon">🐶</div>
+        <div class="featured-icon">
+            🐶
+        </div>
 
-        <h3>Dog Walking</h3>
+        <h2>Dog Walking</h2>
 
         <p>
-            A simple way to start locally and build experience.
+            Help people in your area by walking their dogs.
+            A simple way to build experience and responsibility.
         </p>
 
-        <div class="hero-card-info">
+        <div class="featured-info">
 
             <span>💵 $10–$20</span>
             <span>⏱️ 30–45 min</span>
+            <span>⭐ 2/10</span>
 
         </div>
 
-        <div class="mini-difficulty">
-
-            <span>Difficulty</span>
-
-            <strong>2/10</strong>
-
-            <div>
-                <i style="width:20%"></i>
-            </div>
-
-        </div>
+        <button
+            class="details-button featured-details"
+            data-job="Dog Walking">
+            Learn More →
+        </button>
 
     </div>
 
@@ -137,64 +165,100 @@
 
 <section class="search-section">
 
-    <div class="search-box">
+    <div class="search-wrapper">
 
-        <span>🔎</span>
+        <div class="search-box">
 
-        <input
-            type="text"
-            id="searchInput"
-            placeholder="Search for dog walking, Roblox, editing..."
-        >
+            <span>🔎</span>
 
-        <button id="clearSearch">✕</button>
+            <input
+                id="searchInput"
+                type="text"
+                placeholder="Search jobs..."
+                autocomplete="off">
+
+            <button id="clearSearch">
+                ✕
+            </button>
+
+        </div>
+
+        <button
+            id="favoritesFilter"
+            class="favorites-button">
+            ⭐ My Favorites
+        </button>
 
     </div>
 
 </section>
 
 
-<!-- ================= MONEY IDEAS ================= -->
+<!-- ================= MAIN ================= -->
 
-<main class="container" id="money">
+<main>
 
-    <div class="section-heading">
+<section id="ideas" class="section">
+
+    <div class="section-header">
 
         <div>
-            <span class="section-label">EXPLORE</span>
 
-            <h2>Ways to Make Money</h2>
+            <span class="section-label">
+                EXPLORE
+            </span>
+
+            <h2>Money-Making Ideas</h2>
 
             <p>
-                Find something that matches your skills,
-                interests and available time.
+                Compare different ideas and find one
+                that fits you.
             </p>
+
         </div>
 
-        <div class="controls">
+        <div class="filters">
 
             <select id="categoryFilter">
 
-                <option value="all">All Categories</option>
-                <option value="local">Local Jobs</option>
-                <option value="online">Online</option>
-                <option value="creative">Creative</option>
-                <option value="gaming">Gaming</option>
+                <option value="all">
+                    All Categories
+                </option>
+
+                <option value="local">
+                    🏡 Local
+                </option>
+
+                <option value="online">
+                    💻 Online
+                </option>
+
+                <option value="creative">
+                    🎨 Creative
+                </option>
+
+                <option value="gaming">
+                    🎮 Gaming
+                </option>
 
             </select>
 
             <select id="sortSelect">
 
-                <option value="low">
+                <option value="difficulty-low">
                     Difficulty: Low → High
                 </option>
 
-                <option value="high">
+                <option value="difficulty-high">
                     Difficulty: High → Low
                 </option>
 
-                <option value="earn">
+                <option value="earnings">
                     Potential Earnings
+                </option>
+
+                <option value="time-low">
+                    Shortest Time
                 </option>
 
             </select>
@@ -204,14 +268,18 @@
     </div>
 
 
-    <div id="noResults" class="no-results">
+    <div
+        id="noResults"
+        class="no-results">
 
-        🔎 No ideas found.
+        🔎 No matching ideas found.
 
     </div>
 
 
-    <div class="money-grid" id="moneyGrid">
+    <div
+        id="moneyGrid"
+        class="money-grid">
 
 
         <!-- DOG WALKING -->
@@ -222,10 +290,11 @@
             data-category="local"
             data-difficulty="2"
             data-earnings="20"
-            data-time="45"
-        >
+            data-time="45">
 
-            <button class="favorite" data-job="Dog Walking">
+            <button
+                class="favorite"
+                data-job="Dog Walking">
                 ☆
             </button>
 
@@ -233,14 +302,14 @@
                 🐶
             </div>
 
-            <div class="job-content">
+            <div class="job-body">
 
                 <div class="job-title">
 
                     <h3>Dog Walking</h3>
 
-                    <span class="tag easy-tag">
-                        Very Easy
+                    <span class="tag easy">
+                        2/10
                     </span>
 
                 </div>
@@ -249,30 +318,30 @@
                     Walk dogs for people in your neighborhood.
                 </p>
 
-                <div class="job-details">
+                <div class="job-meta">
 
-                    <span>💵 $10–$20 / walk</span>
-                    <span>⏱️ 30–45 minutes</span>
+                    <span>💵 $10–$20</span>
+                    <span>⏱️ 30–45 min</span>
 
                 </div>
 
-                <div class="difficulty-row">
+                <div class="difficulty">
 
-                    <span>Difficulty</span>
+                    <div class="difficulty-top">
+                        <span>Difficulty</span>
+                        <strong>2/10</strong>
+                    </div>
 
-                    <strong>2/10</strong>
-
-                    <div class="difficulty-bar">
-                        <i class="green-bar" style="width:20%"></i>
+                    <div class="bar">
+                        <i style="width:20%"></i>
                     </div>
 
                 </div>
 
                 <button
                     class="details-button"
-                    data-job="Dog Walking"
-                >
-                    View Details →
+                    data-job="Dog Walking">
+                    View Guide →
                 </button>
 
             </div>
@@ -288,10 +357,11 @@
             data-category="local"
             data-difficulty="3"
             data-earnings="30"
-            data-time="120"
-        >
+            data-time="120">
 
-            <button class="favorite" data-job="Car Washing">
+            <button
+                class="favorite"
+                data-job="Car Washing">
                 ☆
             </button>
 
@@ -299,43 +369,46 @@
                 🚗
             </div>
 
-            <div class="job-content">
+            <div class="job-body">
 
                 <div class="job-title">
 
                     <h3>Car Washing</h3>
 
-                    <span class="tag easy-tag">
-                        Easy
+                    <span class="tag easy">
+                        3/10
                     </span>
 
                 </div>
 
                 <p>
-                    Wash cars for people around your neighborhood.
+                    Wash cars for people you know or in your area.
                 </p>
 
-                <div class="job-details">
+                <div class="job-meta">
 
-                    <span>💵 $15–$30 / car</span>
-                    <span>⏱️ 1–2 hours</span>
+                    <span>💵 $15–$30</span>
+                    <span>⏱️ 1–2 hrs</span>
 
                 </div>
 
-                <div class="difficulty-row">
+                <div class="difficulty">
 
-                    <span>Difficulty</span>
+                    <div class="difficulty-top">
+                        <span>Difficulty</span>
+                        <strong>3/10</strong>
+                    </div>
 
-                    <strong>3/10</strong>
-
-                    <div class="difficulty-bar">
-                        <i class="green-bar" style="width:30%"></i>
+                    <div class="bar">
+                        <i style="width:30%"></i>
                     </div>
 
                 </div>
 
-                <button class="details-button" data-job="Car Washing">
-                    View Details →
+                <button
+                    class="details-button"
+                    data-job="Car Washing">
+                    View Guide →
                 </button>
 
             </div>
@@ -351,10 +424,11 @@
             data-category="local"
             data-difficulty="4"
             data-earnings="30"
-            data-time="180"
-        >
+            data-time="180">
 
-            <button class="favorite" data-job="Gardening">
+            <button
+                class="favorite"
+                data-job="Gardening">
                 ☆
             </button>
 
@@ -362,43 +436,46 @@
                 🌱
             </div>
 
-            <div class="job-content">
+            <div class="job-body">
 
                 <div class="job-title">
 
                     <h3>Gardening</h3>
 
-                    <span class="tag easy-tag">
-                        Easy
+                    <span class="tag medium">
+                        4/10
                     </span>
 
                 </div>
 
                 <p>
-                    Help neighbors with simple outdoor jobs.
+                    Help people with simple outdoor jobs.
                 </p>
 
-                <div class="job-details">
+                <div class="job-meta">
 
-                    <span>💵 $10–$30 / job</span>
-                    <span>⏱️ 1–3 hours</span>
+                    <span>💵 $10–$30</span>
+                    <span>⏱️ 1–3 hrs</span>
 
                 </div>
 
-                <div class="difficulty-row">
+                <div class="difficulty">
 
-                    <span>Difficulty</span>
+                    <div class="difficulty-top">
+                        <span>Difficulty</span>
+                        <strong>4/10</strong>
+                    </div>
 
-                    <strong>4/10</strong>
-
-                    <div class="difficulty-bar">
-                        <i class="orange-bar" style="width:40%"></i>
+                    <div class="bar">
+                        <i style="width:40%"></i>
                     </div>
 
                 </div>
 
-                <button class="details-button" data-job="Gardening">
-                    View Details →
+                <button
+                    class="details-button"
+                    data-job="Gardening">
+                    View Guide →
                 </button>
 
             </div>
@@ -414,54 +491,58 @@
             data-category="creative"
             data-difficulty="6"
             data-earnings="100"
-            data-time="300"
-        >
+            data-time="300">
 
-            <button class="favorite" data-job="Video Editing">
+            <button
+                class="favorite"
+                data-job="Video Editing">
                 ☆
             </button>
 
             <div class="job-icon editing">
-                💻
+                🎬
             </div>
 
-            <div class="job-content">
+            <div class="job-body">
 
                 <div class="job-title">
 
                     <h3>Video Editing</h3>
 
-                    <span class="tag medium-tag">
-                        Medium
+                    <span class="tag medium">
+                        6/10
                     </span>
 
                 </div>
 
                 <p>
-                    Edit videos and build a useful creative skill.
+                    Learn editing and create videos for others.
                 </p>
 
-                <div class="job-details">
+                <div class="job-meta">
 
-                    <span>💵 $20–$100 / video</span>
-                    <span>⏱️ 2–5 hours</span>
+                    <span>💵 $20–$100</span>
+                    <span>⏱️ 2–5 hrs</span>
 
                 </div>
 
-                <div class="difficulty-row">
+                <div class="difficulty">
 
-                    <span>Difficulty</span>
+                    <div class="difficulty-top">
+                        <span>Difficulty</span>
+                        <strong>6/10</strong>
+                    </div>
 
-                    <strong>6/10</strong>
-
-                    <div class="difficulty-bar">
-                        <i class="orange-bar" style="width:60%"></i>
+                    <div class="bar">
+                        <i style="width:60%"></i>
                     </div>
 
                 </div>
 
-                <button class="details-button" data-job="Video Editing">
-                    View Details →
+                <button
+                    class="details-button"
+                    data-job="Video Editing">
+                    View Guide →
                 </button>
 
             </div>
@@ -477,10 +558,11 @@
             data-category="gaming"
             data-difficulty="8"
             data-earnings="500"
-            data-time="600"
-        >
+            data-time="600">
 
-            <button class="favorite" data-job="Making Roblox Games">
+            <button
+                class="favorite"
+                data-job="Making Roblox Games">
                 ☆
             </button>
 
@@ -488,43 +570,46 @@
                 🎮
             </div>
 
-            <div class="job-content">
+            <div class="job-body">
 
                 <div class="job-title">
 
                     <h3>Making Roblox Games</h3>
 
-                    <span class="tag hard-tag">
-                        Hard
+                    <span class="tag hard">
+                        8/10
                     </span>
 
                 </div>
 
                 <p>
-                    Learn Roblox Studio and build your own games.
+                    Learn game development and build your own games.
                 </p>
 
-                <div class="job-details">
+                <div class="job-meta">
 
-                    <span>💵 Potential varies</span>
-                    <span>⏱️ Many hours</span>
+                    <span>💵 Varies</span>
+                    <span>⏱️ Many hrs</span>
 
                 </div>
 
-                <div class="difficulty-row">
+                <div class="difficulty">
 
-                    <span>Difficulty</span>
+                    <div class="difficulty-top">
+                        <span>Difficulty</span>
+                        <strong>8/10</strong>
+                    </div>
 
-                    <strong>8/10</strong>
-
-                    <div class="difficulty-bar">
-                        <i class="red-bar" style="width:80%"></i>
+                    <div class="bar">
+                        <i style="width:80%"></i>
                     </div>
 
                 </div>
 
-                <button class="details-button" data-job="Making Roblox Games">
-                    View Details →
+                <button
+                    class="details-button"
+                    data-job="Making Roblox Games">
+                    View Guide →
                 </button>
 
             </div>
@@ -540,10 +625,11 @@
             data-category="online"
             data-difficulty="9"
             data-earnings="1000"
-            data-time="600"
-        >
+            data-time="600">
 
-            <button class="favorite" data-job="YouTube Channel">
+            <button
+                class="favorite"
+                data-job="YouTube Channel">
                 ☆
             </button>
 
@@ -551,14 +637,14 @@
                 ▶️
             </div>
 
-            <div class="job-content">
+            <div class="job-body">
 
                 <div class="job-title">
 
                     <h3>YouTube Channel</h3>
 
-                    <span class="tag hard-tag">
-                        Very Hard
+                    <span class="tag hard">
+                        9/10
                     </span>
 
                 </div>
@@ -567,42 +653,50 @@
                     Create videos and build an audience over time.
                 </p>
 
-                <div class="job-details">
+                <div class="job-meta">
 
-                    <span>💵 Potential varies</span>
-                    <span>⏱️ Many hours</span>
+                    <span>💵 Varies</span>
+                    <span>⏱️ Many hrs</span>
 
                 </div>
 
-                <div class="difficulty-row">
+                <div class="difficulty">
 
-                    <span>Difficulty</span>
+                    <div class="difficulty-top">
+                        <span>Difficulty</span>
+                        <strong>9/10</strong>
+                    </div>
 
-                    <strong>9/10</strong>
-
-                    <div class="difficulty-bar">
-                        <i class="red-bar" style="width:90%"></i>
+                    <div class="bar">
+                        <i style="width:90%"></i>
                     </div>
 
                 </div>
 
-                <button class="details-button" data-job="YouTube Channel">
-                    View Details →
+                <button
+                    class="details-button"
+                    data-job="YouTube Channel">
+                    View Guide →
                 </button>
 
             </div>
 
         </article>
 
-
     </div>
 
+</section>
 
-    <!-- ================= CALCULATOR ================= -->
 
-    <section class="feature-section" id="calculator">
+<!-- ================= CALCULATOR ================= -->
 
-        <div class="feature-heading">
+<section
+    id="calculator"
+    class="section calculator-section">
+
+    <div class="section-header">
+
+        <div>
 
             <span class="section-label">
                 CALCULATOR
@@ -611,195 +705,308 @@
             <h2>💰 Earnings Calculator</h2>
 
             <p>
-                See how much you could earn based on your own numbers.
+                Create your own simple earnings estimate.
             </p>
 
         </div>
 
-        <div class="calculator">
+    </div>
 
-            <div class="calculator-input">
 
-                <label>
-                    Money per job
-                </label>
+    <div class="calculator-card">
+
+        <div class="calculator-input">
+
+            <label>
+                Money per job
+            </label>
+
+            <div class="input-with-symbol">
+                <span>$</span>
 
                 <input
-                    type="number"
                     id="moneyPerJob"
-                    value="15"
+                    type="number"
                     min="0"
-                >
-
+                    value="15">
             </div>
 
-            <div class="calculator-input">
+        </div>
 
-                <label>
-                    Jobs per week
-                </label>
+
+        <div class="calculator-input">
+
+            <label>
+                Jobs per week
+            </label>
+
+            <input
+                id="jobsPerWeek"
+                type="number"
+                min="0"
+                value="3">
+
+        </div>
+
+
+        <div class="calculator-input">
+
+            <label>
+                Weeks
+            </label>
+
+            <input
+                id="weeks"
+                type="number"
+                min="1"
+                value="4">
+
+        </div>
+
+
+        <div class="calculator-results">
+
+            <div>
+                <span>Weekly</span>
+                <strong id="weekly">$45</strong>
+            </div>
+
+            <div>
+                <span>Monthly</span>
+                <strong id="monthly">$180</strong>
+            </div>
+
+            <div>
+                <span>Yearly*</span>
+                <strong id="yearly">$2,340</strong>
+            </div>
+
+        </div>
+
+        <small>
+            *Estimates only. Actual earnings can vary.
+        </small>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SAVINGS GOAL ================= -->
+
+<section class="section">
+
+    <div class="section-header">
+
+        <div>
+
+            <span class="section-label">
+                YOUR GOAL
+            </span>
+
+            <h2>🎯 Savings Goal</h2>
+
+            <p>
+                Set a target and track your progress.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="goal-card">
+
+        <div class="goal-inputs">
+
+            <div>
+
+                <label>Goal</label>
 
                 <input
+                    id="goalAmount"
                     type="number"
-                    id="jobsPerWeek"
-                    value="3"
                     min="0"
-                >
+                    value="500">
 
             </div>
 
-            <div class="calculator-result">
+            <div>
 
-                <span>Estimated weekly</span>
+                <label>Saved</label>
 
-                <strong id="weeklyResult">
-                    $45
-                </strong>
-
-                <small>
-                    Monthly: <b id="monthlyResult">$180</b>
-                </small>
+                <input
+                    id="savedAmount"
+                    type="number"
+                    min="0"
+                    value="0">
 
             </div>
 
         </div>
 
-    </section>
+
+        <div class="goal-info">
+
+            <div class="goal-numbers">
+
+                <strong id="goalPercent">
+                    0%
+                </strong>
+
+                <span id="goalText">
+                    $0 of $500 saved
+                </span>
+
+            </div>
+
+            <div class="goal-bar">
+
+                <i id="goalProgress"></i>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
 
-    <!-- ================= TIPS ================= -->
+<!-- ================= TIPS ================= -->
 
-    <section class="feature-section" id="tips">
+<section
+    id="tips"
+    class="section">
 
-        <div class="feature-heading">
+    <div class="section-header">
+
+        <div>
 
             <span class="section-label">
                 LEARN
             </span>
 
-            <h2>💡 Money Tips</h2>
-
-        </div>
-
-        <div class="tips-grid">
-
-            <div class="tip-card">
-
-                <div>🎯</div>
-
-                <h3>Set a Goal</h3>
-
-                <p>
-                    Decide what you are saving for and track
-                    your progress.
-                </p>
-
-            </div>
-
-            <div class="tip-card">
-
-                <div>📚</div>
-
-                <h3>Learn Skills</h3>
-
-                <p>
-                    Skills like editing, coding and design
-                    can become valuable over time.
-                </p>
-
-            </div>
-
-            <div class="tip-card">
-
-                <div>⚠️</div>
-
-                <h3>Avoid Scams</h3>
-
-                <p>
-                    Be careful with anyone promising huge
-                    amounts of money with almost no work.
-                </p>
-
-            </div>
-
-            <div class="tip-card">
-
-                <div>🔐</div>
-
-                <h3>Protect Your Privacy</h3>
-
-                <p>
-                    Don't share passwords, private information
-                    or your home address with strangers online.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= ABOUT ================= -->
-
-    <section class="feature-section" id="about">
-
-        <div class="about-box">
-
-            <span class="section-label">
-                ABOUT
-            </span>
-
-            <h2>About Teen Money</h2>
+            <h2>💡 Smart Money Tips</h2>
 
             <p>
-                Teen Money is a project designed to help teenagers
-                explore different ways of earning money and learning
-                useful skills.
+                A few things worth knowing before getting started.
             </p>
-
-            <div class="warning-box">
-
-                ⚠️ <strong>Important:</strong>
-
-                Earnings shown on this website are examples or
-                estimates, not guarantees. Rules around working,
-                payments and online platforms can depend on your
-                age and location.
-
-            </div>
 
         </div>
 
-    </section>
+    </div>
+
+
+    <div class="tips-grid">
+
+        <div class="tip-card">
+            <div class="tip-icon">🎯</div>
+            <h3>Set a Goal</h3>
+            <p>
+                Decide what you're saving for and keep track
+                of your progress.
+            </p>
+        </div>
+
+        <div class="tip-card">
+            <div class="tip-icon">📚</div>
+            <h3>Build Skills</h3>
+            <p>
+                Skills can become more valuable as you
+                gain experience.
+            </p>
+        </div>
+
+        <div class="tip-card">
+            <div class="tip-icon">🛡️</div>
+            <h3>Stay Safe</h3>
+            <p>
+                Don't share passwords, private information
+                or your home address with strangers online.
+            </p>
+        </div>
+
+        <div class="tip-card">
+            <div class="tip-icon">⚠️</div>
+            <h3>Watch for Scams</h3>
+            <p>
+                Be suspicious of offers promising huge
+                amounts of money for almost no work.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SAFETY ================= -->
+
+<section class="section">
+
+    <div class="safety-card">
+
+        <div class="safety-icon">
+            🛡️
+        </div>
+
+        <div>
+
+            <span class="section-label">
+                IMPORTANT
+            </span>
+
+            <h2>Stay Safe</h2>
+
+            <p>
+                If you're doing work for someone you don't know,
+                talk to a parent or guardian first. Never give
+                strangers passwords or unnecessary personal
+                information.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
 
 </main>
 
 
-<!-- ================= JOB DETAILS MODAL ================= -->
+<!-- ================= DETAILS MODAL ================= -->
 
-<div class="modal" id="detailsModal">
+<div
+    id="detailsModal"
+    class="modal">
 
     <div class="modal-content">
 
-        <button class="close-modal" id="closeModal">
+        <button
+            id="closeDetails"
+            class="close-modal">
             ✕
         </button>
 
-        <div id="modalContent"></div>
+        <div id="detailsContent"></div>
 
     </div>
 
 </div>
 
 
-<!-- ================= QUIZ ================= -->
+<!-- ================= QUIZ MODAL ================= -->
 
-<div class="modal" id="quizModal">
+<div
+    id="quizModal"
+    class="modal">
 
-    <div class="quiz-content">
+    <div class="modal-content quiz-content">
 
-        <button class="close-modal" id="closeQuiz">
+        <button
+            id="closeQuiz"
+            class="close-modal">
             ✕
         </button>
 
@@ -807,7 +1014,7 @@
             PERSONAL QUIZ
         </span>
 
-        <h2>🎯 Find the Best Option for You</h2>
+        <h2>🎯 Find Your Best Option</h2>
 
         <p>
             Answer a few questions and we'll recommend
@@ -815,9 +1022,7 @@
         </p>
 
 
-        <label>
-            What interests you most?
-        </label>
+        <label>What interests you?</label>
 
         <select id="quizInterest">
 
@@ -825,12 +1030,12 @@
                 🐶 Animals
             </option>
 
-            <option value="outside">
+            <option value="outdoor">
                 🌳 Outdoor work
             </option>
 
             <option value="creative">
-                🎨 Creating things
+                🎨 Creative work
             </option>
 
             <option value="technology">
@@ -848,30 +1053,26 @@
         </select>
 
 
-        <label>
-            Where would you rather work?
-        </label>
+        <label>Where would you rather work?</label>
 
         <select id="quizLocation">
 
             <option value="outside">
-                🌳 Outside
+                🏡 Around your area
             </option>
 
             <option value="online">
                 💻 Online
             </option>
 
-            <option value="either">
+            <option value="both">
                 🔄 Either
             </option>
 
         </select>
 
 
-        <label>
-            How much time do you have?
-        </label>
+        <label>How much time do you have?</label>
 
         <select id="quizTime">
 
@@ -890,8 +1091,29 @@
         </select>
 
 
-        <button id="quizSubmit" class="primary-button full">
-            Find My Options 🚀
+        <label>What matters more?</label>
+
+        <select id="quizGoal">
+
+            <option value="quick">
+                💵 Quick/simple earnings
+            </option>
+
+            <option value="skill">
+                📚 Building a skill
+            </option>
+
+            <option value="long">
+                🚀 Building something long-term
+            </option>
+
+        </select>
+
+
+        <button
+            id="quizSubmit"
+            class="primary-button full">
+            Show My Results 🚀
         </button>
 
 
@@ -904,10 +1126,14 @@
 
 <!-- ================= BACK TO TOP ================= -->
 
-<button id="backTop" class="back-top">
+<button
+    id="backTop"
+    class="back-top">
     ↑
 </button>
 
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
