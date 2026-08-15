@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Teen Money 💰</title>
-    <meta name="description" content="Simple ways for teenagers to make and manage money.">
+    <meta
+        name="description"
+        content="Discover realistic ways teenagers can make money and plan their savings."
+    >
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -13,209 +16,587 @@
 <body>
 
 <header class="navbar">
-    <div class="logo">💰 Teen Money</div>
+    <a href="#" class="logo">💰 Teen Money</a>
 
     <nav>
         <a href="#ideas">Ideas</a>
-        <a href="#planner">Planner</a>
+        <a href="#planner">Money Planner</a>
         <a href="#calculator">Calculator</a>
         <a href="#quiz">Quiz</a>
     </nav>
 
-    <button id="darkModeBtn" class="icon-button">🌙</button>
+    <button id="darkModeBtn" class="dark-button" type="button">
+        🌙
+    </button>
 </header>
 
 
 <main>
 
-<!-- HERO -->
-<section class="hero">
-    <div class="hero-content">
-        <span class="badge">💸 MONEY MADE SIMPLE</span>
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
 
-        <h1>Make Money as a <span>Teen</span></h1>
+            <div class="badge">💸 TEEN MONEY GUIDE</div>
 
-        <p>
-            Discover realistic ways to earn money, build useful skills
-            and reach your savings goals.
-        </p>
+            <h1>
+                Make Money as a
+                <span>Teen</span>
+            </h1>
 
-        <div class="hero-buttons">
-            <a href="#ideas" class="primary-button">Explore Ideas 🚀</a>
-            <button id="randomIdeaBtn" class="secondary-button">
-                🎲 Random Idea
+            <p>
+                Find realistic ways to earn money, learn useful skills
+                and reach your savings goals.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#ideas" class="button primary">
+                    Explore Ideas 🚀
+                </a>
+
+                <button
+                    id="randomBtn"
+                    class="button secondary"
+                    type="button"
+                >
+                    🎲 Random Idea
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- STATS -->
+    <section class="stats">
+
+        <div class="stat">
+            <strong id="ideaCount">20</strong>
+            <span>Money Ideas</span>
+        </div>
+
+        <div class="stat">
+            <strong>1–10</strong>
+            <span>Difficulty</span>
+        </div>
+
+        <div class="stat">
+            <strong>💰</strong>
+            <span>Money Planner</span>
+        </div>
+
+        <div class="stat">
+            <strong>🎯</strong>
+            <span>Goal Tracker</span>
+        </div>
+
+    </section>
+
+
+    <!-- IDEAS -->
+    <section id="ideas" class="section">
+
+        <div class="section-title">
+            <div>
+                <span class="label">EXPLORE</span>
+
+                <h2>💼 Ways Teens Can Make Money</h2>
+
+                <p>
+                    Search, filter and sort the different ideas.
+                </p>
+            </div>
+        </div>
+
+
+        <!-- TOOLS -->
+        <div class="tools">
+
+            <input
+                id="searchInput"
+                type="search"
+                placeholder="🔎 Search ideas..."
+            >
+
+            <select id="categoryFilter">
+                <option value="all">All Categories</option>
+                <option value="local">🏡 Local</option>
+                <option value="online">💻 Online</option>
+                <option value="creative">🎨 Creative</option>
+                <option value="skills">🧠 Skills</option>
+            </select>
+
+            <select id="difficultyFilter">
+                <option value="all">All Difficulties</option>
+                <option value="1">Difficulty 1</option>
+                <option value="2">Difficulty 2</option>
+                <option value="3">Difficulty 3</option>
+                <option value="4">Difficulty 4</option>
+                <option value="5">Difficulty 5</option>
+                <option value="6">Difficulty 6</option>
+                <option value="7">Difficulty 7</option>
+                <option value="8">Difficulty 8</option>
+                <option value="9">Difficulty 9</option>
+                <option value="10">Difficulty 10</option>
+            </select>
+
+            <select id="sortSelect">
+                <option value="default">Sort By</option>
+                <option value="difficulty-low">
+                    Difficulty: Low → High
+                </option>
+                <option value="difficulty-high">
+                    Difficulty: High → Low
+                </option>
+                <option value="time-low">
+                    Time: Short → Long
+                </option>
+                <option value="time-high">
+                    Time: Long → Short
+                </option>
+                <option value="earnings-low">
+                    Earnings: Low → High
+                </option>
+                <option value="earnings-high">
+                    Earnings: High → Low
+                </option>
+            </select>
+
+        </div>
+
+
+        <div class="results-info">
+            <span id="resultsText">Showing 20 ideas</span>
+
+            <button id="clearFilters" type="button">
+                Clear Filters
             </button>
         </div>
-    </div>
-</section>
 
 
-<!-- STATS -->
-<section class="stats-section">
-    <div class="stat">
-        <strong>20+</strong>
-        <span>Money Ideas</span>
-    </div>
-
-    <div class="stat">
-        <strong>1–10</strong>
-        <span>Difficulty</span>
-    </div>
-
-    <div class="stat">
-        <strong>Free</strong>
-        <span>To Explore</span>
-    </div>
-
-    <div class="stat">
-        <strong>🎯</strong>
-        <span>Set Goals</span>
-    </div>
-</section>
+        <!-- JAVASCRIPT PUTS ALL 20 CARDS HERE -->
+        <div id="ideasGrid" class="ideas-grid"></div>
 
 
-<!-- IDEAS -->
-<section id="ideas" class="section">
-
-    <div class="section-header">
-        <div>
-            <span class="section-label">EXPLORE</span>
-            <h2>💼 Ways Teens Can Make Money</h2>
-            <p>Find something that fits your time, skills and interests.</p>
+        <div id="noResults" class="no-results">
+            😕 No ideas match your search.
         </div>
-    </div>
+
+    </section>
 
 
-    <!-- SEARCH -->
-    <div class="tools">
+    <!-- MONEY PLANNER -->
+    <section id="planner" class="section alternate">
 
-        <input
-            id="searchInput"
-            type="text"
-            placeholder="🔎 Search money ideas..."
+        <div class="section-title centered">
+
+            <span class="label">PLAN YOUR MONEY</span>
+
+            <h2>📅 Money Planner</h2>
+
+            <p>
+                Enter your goal and expected weekly earnings.
+                The calculator updates automatically.
+            </p>
+
+        </div>
+
+
+        <div class="planner-card">
+
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label for="plannerGoal">
+                        🎯 Savings Goal
+                    </label>
+
+                    <div class="money-input">
+                        <span>kr</span>
+
+                        <input
+                            id="plannerGoal"
+                            type="number"
+                            min="1"
+                            value="1000"
+                        >
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="plannerWeekly">
+                        💵 Earnings Per Week
+                    </label>
+
+                    <div class="money-input">
+                        <span>kr</span>
+
+                        <input
+                            id="plannerWeekly"
+                            type="number"
+                            min="1"
+                            value="100"
+                        >
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="planner-result">
+
+                <div class="result-icon">🎯</div>
+
+                <p>You could reach your goal in approximately:</p>
+
+                <strong id="plannerWeeks">10 weeks</strong>
+
+                <p id="plannerExplanation">
+                    At 100 kr per week, a 1,000 kr goal takes about 10 weeks.
+                </p>
+
+                <div class="progress">
+                    <div id="plannerProgress"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EARNINGS CALCULATOR -->
+    <section id="calculator" class="section">
+
+        <div class="section-title centered">
+
+            <span class="label">CALCULATE</span>
+
+            <h2>🧮 Earnings Calculator</h2>
+
+            <p>
+                See how much you could earn from doing a job.
+            </p>
+
+        </div>
+
+
+        <div class="calculator-card">
+
+            <div class="form-group">
+                <label for="calcAmount">
+                    💰 Money per job
+                </label>
+
+                <div class="money-input">
+                    <span>kr</span>
+
+                    <input
+                        id="calcAmount"
+                        type="number"
+                        min="0"
+                        value="100"
+                    >
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label for="calcJobs">
+                    🔁 Jobs per week
+                </label>
+
+                <input
+                    id="calcJobs"
+                    type="number"
+                    min="0"
+                    value="3"
+                >
+            </div>
+
+
+            <div class="calculator-result">
+
+                <span>Estimated weekly earnings</span>
+
+                <strong id="weeklyResult">
+                    300 kr
+                </strong>
+
+                <small id="monthlyResult">
+                    About 1,200 kr per month
+                </small>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SAVINGS GOAL -->
+    <section class="section alternate">
+
+        <div class="section-title centered">
+
+            <span class="label">TRACK YOUR PROGRESS</span>
+
+            <h2>🎯 Savings Goal</h2>
+
+            <p>
+                Track how close you are to your goal.
+            </p>
+
+        </div>
+
+
+        <div class="goal-card">
+
+            <div class="form-grid">
+
+                <div class="form-group">
+
+                    <label for="goalAmount">
+                        🎯 My Goal
+                    </label>
+
+                    <div class="money-input">
+                        <span>kr</span>
+
+                        <input
+                            id="goalAmount"
+                            type="number"
+                            min="1"
+                            value="1000"
+                        >
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="savedAmount">
+                        💰 Amount Saved
+                    </label>
+
+                    <div class="money-input">
+                        <span>kr</span>
+
+                        <input
+                            id="savedAmount"
+                            type="number"
+                            min="0"
+                            value="0"
+                        >
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="goal-progress">
+                <div id="goalProgressBar"></div>
+            </div>
+
+            <div class="goal-stats">
+
+                <span id="goalText">
+                    0 kr saved
+                </span>
+
+                <strong id="goalPercent">
+                    0%
+                </strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- QUIZ -->
+    <section id="quiz" class="section">
+
+        <div class="section-title centered">
+
+            <span class="label">FIND YOUR MATCH</span>
+
+            <h2>🧠 Which Idea Fits You?</h2>
+
+            <p>
+                Answer two questions and get recommendations.
+            </p>
+
+        </div>
+
+
+        <div class="quiz-card">
+
+            <h3>1. What type of work sounds best?</h3>
+
+            <div
+                class="quiz-options"
+                id="categoryOptions"
+            >
+
+                <button data-value="local" type="button">
+                    🏡 Local
+                </button>
+
+                <button data-value="online" type="button">
+                    💻 Online
+                </button>
+
+                <button data-value="creative" type="button">
+                    🎨 Creative
+                </button>
+
+                <button data-value="skills" type="button">
+                    🧠 Skills
+                </button>
+
+            </div>
+
+
+            <h3>2. What difficulty do you want?</h3>
+
+            <div
+                class="quiz-options"
+                id="difficultyOptions"
+            >
+
+                <button data-value="3" type="button">
+                    🟢 Easy
+                </button>
+
+                <button data-value="6" type="button">
+                    🟡 Medium
+                </button>
+
+                <button data-value="10" type="button">
+                    🔴 Hard
+                </button>
+
+            </div>
+
+
+            <button
+                id="quizButton"
+                class="button primary"
+                type="button"
+            >
+                Find My Ideas 🚀
+            </button>
+
+
+            <div id="quizResult" class="quiz-result"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- XP -->
+    <section class="section">
+
+        <div class="level-card">
+
+            <div class="level-icon">
+                🏆
+            </div>
+
+            <div class="level-info">
+
+                <span>Your Teen Money Level</span>
+
+                <h2>
+                    Level <span id="userLevel">1</span>
+                </h2>
+
+                <div class="xp-track">
+                    <div id="xpBar"></div>
+                </div>
+
+                <small id="xpText">
+                    0 / 100 XP
+                </small>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+
+    <div class="modal-box">
+
+        <button
+            id="closeModal"
+            class="close-modal"
+            type="button"
         >
+            ×
+        </button>
 
-        <select id="categoryFilter">
-            <option value="all">All Categories</option>
-            <option value="local">Local</option>
-            <option value="online">Online</option>
-            <option value="creative">Creative</option>
-            <option value="skills">Skills</option>
-        </select>
+        <div id="modalIcon" class="modal-icon">
+            💰
+        </div>
 
-        <select id="difficultyFilter">
-            <option value="all">All Difficulties</option>
-            <option value="1">Difficulty 1</option>
-            <option value="2">Difficulty 2</option>
-            <option value="3">Difficulty 3</option>
-            <option value="4">Difficulty 4</option>
-            <option value="5">Difficulty 5</option>
-            <option value="6">Difficulty 6</option>
-            <option value="7">Difficulty 7</option>
-            <option value="8">Difficulty 8</option>
-            <option value="9">Difficulty 9</option>
-            <option value="10">Difficulty 10</option>
-        </select>
+        <h2 id="modalTitle">
+            Money Idea
+        </h2>
 
-        <select id="sortSelect">
-            <option value="default">Sort By</option>
-            <option value="difficulty-low">Difficulty: Low → High</option>
-            <option value="difficulty-high">Difficulty: High → Low</option>
-            <option value="time-low">Time: Short → Long</option>
-            <option value="time-high">Time: Long → Short</option>
-            <option value="earnings-low">Earnings: Low → High</option>
-            <option value="earnings-high">Earnings: High → Low</option>
-        </select>
+        <p id="modalDescription"></p>
+
+        <div class="modal-details">
+
+            <span id="modalDifficulty"></span>
+            <span id="modalTime"></span>
+            <span id="modalEarnings"></span>
+
+        </div>
+
+        <button
+            id="modalDone"
+            class="button primary"
+            type="button"
+        >
+            Got It 👍
+        </button>
 
     </div>
 
-
-    <div id="ideasGrid" class="ideas-grid">
-
-
-        <!-- 1 -->
-        <article class="idea-card"
-            data-name="Dog Walking"
-            data-category="local"
-            data-difficulty="2"
-            data-time="40"
-            data-earnings="15">
-
-            <div class="idea-icon">🐕</div>
-
-            <div class="idea-top">
-                <span class="category">LOCAL</span>
-                <button class="favorite">☆</button>
-            </div>
-
-            <h3>Dog Walking</h3>
-
-            <p>Walk people's dogs while they are busy.</p>
-
-            <div class="idea-info">
-                <span>⭐ Difficulty 2/10</span>
-                <span>⏱️ 30–45 min</span>
-                <span>💵 ~$10–20</span>
-            </div>
-
-            <button class="learn-more"
-                data-title="Dog Walking"
-                data-description="Offer to walk dogs for people in your neighborhood. Start with people you know and build trust.">
-                Learn More →
-            </button>
-        </article>
+</div>
 
 
-        <!-- 2 -->
-        <article class="idea-card"
-            data-name="Grocery Help"
-            data-category="local"
-            data-difficulty="2"
-            data-time="30"
-            data-earnings="20">
+<footer>
 
-            <div class="idea-icon">🛒</div>
+    <div class="footer-logo">
+        💰 Teen Money
+    </div>
 
-            <div class="idea-top">
-                <span class="category">LOCAL</span>
-                <button class="favorite">☆</button>
-            </div>
+    <p>
+        Learn skills. Set goals. Make smart choices.
+    </p>
 
-            <h3>Grocery Help</h3>
+    <small>
+        Earnings are estimates and are not guaranteed.
+    </small>
 
-            <p>Help neighbors carry or organize their groceries.</p>
-
-            <div class="idea-info">
-                <span>⭐ Difficulty 2/10</span>
-                <span>⏱️ Around 30 min</span>
-                <span>💵 ~$10–25</span>
-            </div>
-
-            <button class="learn-more"
-                data-title="Grocery Help"
-                data-description="Offer simple grocery help to people you know or trusted neighbors. Always make sure a parent or guardian knows where you are.">
-                Learn More →
-            </button>
-        </article>
+</footer>
 
 
-        <!-- 3 -->
-        <article class="idea-card"
-            data-name="Car Washing"
-            data-category="local"
-            data-difficulty="3"
-            data-time="60"
-            data-earnings="25">
+<script src="script.js"></script>
 
-            <div class="idea-icon">🚗</div>
-
-            <div class="idea-top">
-                <span class="category">LOCAL</span>
-                <button class="favorite">☆</button>
-            </div>
-
-            <h3>Car Washing</h3>
-
-            <p>Wash cars for people you know.</p>
-
-            <div class="idea
+</body>
+</html>
