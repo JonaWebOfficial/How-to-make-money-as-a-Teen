@@ -1,17 +1,321 @@
 /* ==========================================
-   TEEN MONEY 2.0
+   TEEN MONEY - 20 IDEAS
 ========================================== */
+
+const $ = selector => document.querySelector(selector);
+const $$ = selector => document.querySelectorAll(selector);
 
 
 /* ==========================================
-   HELPERS
+   JOB DATABASE
 ========================================== */
 
-const $ = selector =>
-    document.querySelector(selector);
+const jobs = {
 
-const $$ = selector =>
-    document.querySelectorAll(selector);
+    "Dog Walking": {
+        icon: "🐶",
+        category: "Local",
+        difficulty: "2/10",
+        time: "30–45 minutes",
+        money: "$10–$20",
+        description: "Walk dogs for people in your neighborhood.",
+        steps: [
+            "Start with people you or your family know.",
+            "Agree on the price and time beforehand.",
+            "Follow the owner's instructions.",
+            "Be responsible and respectful."
+        ]
+    },
+
+    "Car Washing": {
+        icon: "🚗",
+        category: "Local",
+        difficulty: "3/10",
+        time: "1–2 hours",
+        money: "$15–$30",
+        description: "Wash cars for people you know or in your area.",
+        steps: [
+            "Ask someone if they need their car washed.",
+            "Agree on the price beforehand.",
+            "Ask before using equipment.",
+            "Clean up when finished."
+        ]
+    },
+
+    "Gardening": {
+        icon: "🌱",
+        category: "Local",
+        difficulty: "4/10",
+        time: "1–3 hours",
+        money: "$10–$30",
+        description: "Help people with simple gardening jobs.",
+        steps: [
+            "Ask people you know if they need help.",
+            "Agree on exactly what you will do.",
+            "Agree on payment beforehand.",
+            "Ask for help with unfamiliar equipment."
+        ]
+    },
+
+    "Cleaning": {
+        icon: "🧹",
+        category: "Local",
+        difficulty: "3/10",
+        time: "1–2 hours",
+        money: "$10–$30",
+        description: "Help people with simple cleaning tasks.",
+        steps: [
+            "Start with people you know.",
+            "Agree on the job beforehand.",
+            "Ask which cleaning products you can use.",
+            "Leave the area tidy."
+        ]
+    },
+
+    "Grocery Help": {
+        icon: "🛒",
+        category: "Local",
+        difficulty: "2/10",
+        time: "Around 1 hour",
+        money: "$10–$20",
+        description: "Help someone with simple grocery-related tasks.",
+        steps: [
+            "Start with family, friends or trusted neighbors.",
+            "Agree on exactly what is needed.",
+            "Keep receipts if money is involved.",
+            "Never share unnecessary personal information."
+        ]
+    },
+
+    "Helping With Moving": {
+        icon: "📦",
+        category: "Local",
+        difficulty: "5/10",
+        time: "2–4 hours",
+        money: "$20–$50",
+        description: "Help with simple moving and organizing tasks.",
+        steps: [
+            "Only help with tasks appropriate for you.",
+            "Avoid lifting anything too heavy.",
+            "Agree on the job beforehand.",
+            "Ask an adult for help when needed."
+        ]
+    },
+
+    "Pet Sitting": {
+        icon: "🐱",
+        category: "Local",
+        difficulty: "3/10",
+        time: "1–2+ hours",
+        money: "$15–$40",
+        description: "Look after pets for people you know.",
+        steps: [
+            "Start with trusted people.",
+            "Learn the pet's routine.",
+            "Follow the owner's instructions.",
+            "Contact the owner if something goes wrong."
+        ]
+    },
+
+    "Video Editing": {
+        icon: "🎬",
+        category: "Creative",
+        difficulty: "6/10",
+        time: "2–5 hours",
+        money: "$20–$100",
+        description: "Edit videos for yourself or other creators.",
+        steps: [
+            "Learn the basics of an editing program.",
+            "Practice with your own videos.",
+            "Build a small portfolio.",
+            "Improve your editing skills."
+        ]
+    },
+
+    "Graphic Design": {
+        icon: "🎨",
+        category: "Creative",
+        difficulty: "6/10",
+        time: "2–4 hours",
+        money: "$20–$100",
+        description: "Create graphics such as posters, logos and social media designs.",
+        steps: [
+            "Learn basic design principles.",
+            "Practice making different designs.",
+            "Create example projects.",
+            "Build a portfolio."
+        ]
+    },
+
+    "Photography": {
+        icon: "📸",
+        category: "Creative",
+        difficulty: "5/10",
+        time: "1–3 hours",
+        money: "$20–$80",
+        description: "Practice photography and create useful images.",
+        steps: [
+            "Learn basic photography.",
+            "Practice with subjects you have permission to photograph.",
+            "Edit your photos.",
+            "Build a portfolio."
+        ]
+    },
+
+    "YouTube Channel": {
+        icon: "▶️",
+        category: "Online",
+        difficulty: "9/10",
+        time: "Many hours",
+        money: "Varies",
+        description: "Create videos and build an audience over time.",
+        steps: [
+            "Choose a topic you enjoy.",
+            "Create useful or entertaining videos.",
+            "Learn basic editing.",
+            "Improve your thumbnails and titles.",
+            "Protect your personal information."
+        ]
+    },
+
+    "Making Roblox Games": {
+        icon: "🎮",
+        category: "Gaming",
+        difficulty: "8/10",
+        time: "Many hours",
+        money: "Varies",
+        description: "Learn game development and build your own Roblox games.",
+        steps: [
+            "Learn Roblox Studio.",
+            "Build a small project.",
+            "Learn Lua scripting.",
+            "Test your game.",
+            "Improve it over time."
+        ]
+    },
+
+    "Website Design": {
+        icon: "🌐",
+        category: "Online",
+        difficulty: "7/10",
+        time: "Several hours",
+        money: "$30–$200+",
+        description: "Learn HTML, CSS and JavaScript and build websites.",
+        steps: [
+            "Learn HTML.",
+            "Learn CSS.",
+            "Learn basic JavaScript.",
+            "Build practice websites.",
+            "Create a portfolio."
+        ]
+    },
+
+    "Writing": {
+        icon: "✍️",
+        category: "Online",
+        difficulty: "5/10",
+        time: "1–3 hours",
+        money: "$10–$60+",
+        description: "Practice writing articles, stories or other content.",
+        steps: [
+            "Practice writing regularly.",
+            "Choose topics you understand.",
+            "Proofread your work.",
+            "Build examples of your writing."
+        ]
+    },
+
+    "Social Media Editing": {
+        icon: "📱",
+        category: "Online",
+        difficulty: "6/10",
+        time: "2–4 hours",
+        money: "$20–$100",
+        description: "Create and edit short-form social media content.",
+        steps: [
+            "Learn short-form editing.",
+            "Practice making videos.",
+            "Learn how captions and pacing work.",
+            "Create example videos."
+        ]
+    },
+
+    "Making Thumbnails": {
+        icon: "🖼️",
+        category: "Creative",
+        difficulty: "5/10",
+        time: "1–2 hours",
+        money: "$10–$60",
+        description: "Design thumbnails for videos and social media.",
+        steps: [
+            "Learn a design program.",
+            "Study good thumbnail layouts.",
+            "Practice different designs.",
+            "Build examples for your portfolio."
+        ]
+    },
+
+    "Selling Crafts": {
+        icon: "👕",
+        category: "Creative",
+        difficulty: "5/10",
+        time: "Several hours",
+        money: "Varies",
+        description: "Create handmade products and sell them with appropriate permission.",
+        steps: [
+            "Choose something you can make well.",
+            "Calculate your material costs.",
+            "Create a few examples.",
+            "Ask a parent or guardian about selling online or locally."
+        ]
+    },
+
+    "Tutoring": {
+        icon: "📚",
+        category: "Education",
+        difficulty: "5/10",
+        time: "Around 1 hour",
+        money: "$10–$50",
+        description: "Help younger students understand subjects you know well.",
+        steps: [
+            "Choose a subject you understand well.",
+            "Start with people you know.",
+            "Prepare simple explanations.",
+            "Be patient and encouraging."
+        ]
+    },
+
+    "Game Testing": {
+        icon: "🕹️",
+        category: "Gaming",
+        difficulty: "6/10",
+        time: "1–3 hours",
+        money: "Varies",
+        description: "Test games when legitimate opportunities are available.",
+        steps: [
+            "Look for legitimate opportunities.",
+            "Check age requirements.",
+            "Never pay someone just to receive a job.",
+            "Report bugs clearly."
+        ]
+    },
+
+    "Selling Digital Designs": {
+        icon: "💡",
+        category: "Online",
+        difficulty: "7/10",
+        time: "Several hours",
+        money: "Varies",
+        description: "Create digital artwork, templates or designs.",
+        steps: [
+            "Learn a design tool.",
+            "Create original designs.",
+            "Build a small collection.",
+            "Ask a parent or guardian about platforms and payments."
+        ]
+    }
+
+};
 
 
 /* ==========================================
@@ -20,11 +324,8 @@ const $$ = selector =>
 
 const themeButton = $("#themeButton");
 
-if (
-    localStorage.getItem("teenMoneyDark") === "true"
-) {
+if (localStorage.getItem("teenMoneyDark") === "true") {
     document.body.classList.add("dark");
-
     themeButton.textContent = "☀️";
 }
 
@@ -47,29 +348,18 @@ themeButton.addEventListener("click", () => {
 
 
 /* ==========================================
-   MOBILE MENU
-========================================== */
-
-const mobileMenu = $("#mobileMenu");
-const nav = $("#nav");
-
-mobileMenu.addEventListener("click", () => {
-
-    nav.classList.toggle("mobile-open");
-
-});
-
-
-/* ==========================================
-   SEARCH + FILTER
+   SEARCH
 ========================================== */
 
 const searchInput = $("#searchInput");
-const clearSearch = $("#clearSearch");
 const categoryFilter = $("#categoryFilter");
+const clearSearch = $("#clearSearch");
 const favoritesFilter = $("#favoritesFilter");
-const moneyGrid = $("#moneyGrid");
-const noResults = $("#noResults");
+
+let favorites =
+    JSON.parse(
+        localStorage.getItem("teenMoneyFavorites") || "[]"
+    );
 
 let showFavoritesOnly = false;
 
@@ -77,49 +367,36 @@ let showFavoritesOnly = false;
 function filterJobs() {
 
     const search =
-        searchInput.value
-            .toLowerCase()
-            .trim();
+        searchInput.value.toLowerCase().trim();
 
     const category =
         categoryFilter.value;
 
-    const cards =
-        Array.from(
-            $$(".money-card")
-        );
-
     let visible = 0;
 
-    cards.forEach(card => {
+    $$(".money-card").forEach(card => {
 
         const name =
-            card.dataset.name
-                .toLowerCase();
-
-        const cardCategory =
-            card.dataset.category;
+            card.dataset.name.toLowerCase();
 
         const matchesSearch =
             name.includes(search);
 
         const matchesCategory =
             category === "all" ||
-            cardCategory === category;
+            card.dataset.category === category;
 
         const isFavorite =
-            favorites.includes(
-                card.dataset.name
-            );
+            favorites.includes(card.dataset.name);
 
-        const matchesFavorites =
+        const matchesFavorite =
             !showFavoritesOnly ||
             isFavorite;
 
         const show =
             matchesSearch &&
             matchesCategory &&
-            matchesFavorites;
+            matchesFavorite;
 
         card.style.display =
             show ? "flex" : "none";
@@ -128,9 +405,8 @@ function filterJobs() {
 
     });
 
-    noResults.style.display =
+    $("#noResults").style.display =
         visible === 0 ? "block" : "none";
-
 }
 
 
@@ -152,8 +428,6 @@ clearSearch.addEventListener(
 
         filterJobs();
 
-        searchInput.focus();
-
     }
 );
 
@@ -163,11 +437,6 @@ favoritesFilter.addEventListener(
 
         showFavoritesOnly =
             !showFavoritesOnly;
-
-        favoritesFilter.classList.toggle(
-            "active",
-            showFavoritesOnly
-        );
 
         favoritesFilter.textContent =
             showFavoritesOnly
@@ -185,6 +454,7 @@ favoritesFilter.addEventListener(
 ========================================== */
 
 const sortSelect = $("#sortSelect");
+const moneyGrid = $("#moneyGrid");
 
 sortSelect.addEventListener(
     "change",
@@ -195,45 +465,28 @@ sortSelect.addEventListener(
 function sortJobs() {
 
     const cards =
-        Array.from(
-            $$(".money-card")
-        );
+        Array.from($$(".money-card"));
 
     const mode =
         sortSelect.value;
 
     cards.sort((a, b) => {
 
-        const difficultyA =
-            Number(a.dataset.difficulty);
-
-        const difficultyB =
-            Number(b.dataset.difficulty);
-
-        const earningsA =
-            Number(a.dataset.earnings);
-
-        const earningsB =
-            Number(b.dataset.earnings);
-
-        const timeA =
-            Number(a.dataset.time);
-
-        const timeB =
-            Number(b.dataset.time);
-
-
         if (mode === "difficulty-low")
-            return difficultyA - difficultyB;
+            return Number(a.dataset.difficulty)
+                - Number(b.dataset.difficulty);
 
         if (mode === "difficulty-high")
-            return difficultyB - difficultyA;
+            return Number(b.dataset.difficulty)
+                - Number(a.dataset.difficulty);
 
         if (mode === "earnings")
-            return earningsB - earningsA;
+            return Number(b.dataset.earnings)
+                - Number(a.dataset.earnings);
 
         if (mode === "time-low")
-            return timeA - timeB;
+            return Number(a.dataset.time)
+                - Number(b.dataset.time);
 
     });
 
@@ -248,31 +501,20 @@ function sortJobs() {
    FAVORITES
 ========================================== */
 
-let favorites =
-    JSON.parse(
-        localStorage.getItem(
-            "teenMoneyFavorites"
-        ) || "[]"
-    );
-
-
 function updateFavorites() {
 
     $$(".favorite").forEach(button => {
 
-        const job =
-            button.dataset.job;
+        const job = button.dataset.job;
 
         if (favorites.includes(job)) {
 
             button.textContent = "★";
-
             button.classList.add("active");
 
         } else {
 
             button.textContent = "☆";
-
             button.classList.remove("active");
 
         }
@@ -318,184 +560,16 @@ $$(".favorite").forEach(button => {
 
 });
 
-
 updateFavorites();
 
 
 /* ==========================================
-   JOB INFORMATION
+   DETAILS MODAL
 ========================================== */
 
-const jobs = {
-
-    "Dog Walking": {
-
-        icon: "🐶",
-
-        category: "Local",
-
-        difficulty: "2/10",
-
-        time: "30–45 minutes",
-
-        money: "$10–$20 per walk",
-
-        description:
-            "Walk dogs for people in your neighborhood.",
-
-        steps: [
-            "Talk to a parent or guardian first.",
-            "Start with people you already know.",
-            "Agree on the price and time beforehand.",
-            "Follow the owner's instructions.",
-            "Be responsible and respectful."
-        ]
-
-    },
-
-
-    "Car Washing": {
-
-        icon: "🚗",
-
-        category: "Local",
-
-        difficulty: "3/10",
-
-        time: "1–2 hours",
-
-        money: "$15–$30 per car",
-
-        description:
-            "Wash cars for people you know or in your area.",
-
-        steps: [
-            "Ask if someone needs their car washed.",
-            "Agree on the price beforehand.",
-            "Make sure you have permission to use equipment.",
-            "Clean up when you're finished."
-        ]
-
-    },
-
-
-    "Gardening": {
-
-        icon: "🌱",
-
-        category: "Local",
-
-        difficulty: "4/10",
-
-        time: "1–3 hours",
-
-        money: "$10–$30 per job",
-
-        description:
-            "Help people with simple gardening and outdoor tasks.",
-
-        steps: [
-            "Ask people you know if they need help.",
-            "Agree on exactly what you'll do.",
-            "Agree on payment beforehand.",
-            "Ask for help with unfamiliar equipment."
-        ]
-
-    },
-
-
-    "Video Editing": {
-
-        icon: "🎬",
-
-        category: "Creative",
-
-        difficulty: "6/10",
-
-        time: "2–5 hours",
-
-        money: "$20–$100 per video",
-
-        description:
-            "Learn video editing and potentially create videos for others.",
-
-        steps: [
-            "Learn the basics of an editing program.",
-            "Practice by making example videos.",
-            "Create a small portfolio.",
-            "Build your skills over time.",
-            "Keep your personal information private."
-        ]
-
-    },
-
-
-    "Making Roblox Games": {
-
-        icon: "🎮",
-
-        category: "Gaming",
-
-        difficulty: "8/10",
-
-        time: "Many hours",
-
-        money: "Varies",
-
-        description:
-            "Learn game development, scripting and design.",
-
-        steps: [
-            "Learn the basics of Roblox Studio.",
-            "Build a very small game.",
-            "Learn scripting.",
-            "Improve your game over time.",
-            "Check the current platform rules before monetizing."
-        ]
-
-    },
-
-
-    "YouTube Channel": {
-
-        icon: "▶️",
-
-        category: "Online",
-
-        difficulty: "9/10",
-
-        time: "Many hours",
-
-        money: "Varies",
-
-        description:
-            "Create videos around a topic you enjoy.",
-
-        steps: [
-            "Choose a topic you enjoy.",
-            "Create useful or entertaining videos.",
-            "Learn basic editing.",
-            "Improve your thumbnails and titles.",
-            "Protect your personal information."
-        ]
-
-    }
-
-};
-
-
-/* ==========================================
-   DETAILS MODALS
-========================================== */
-
-const detailsModal =
-    $("#detailsModal");
-
-const detailsContent =
-    $("#detailsContent");
-
-const closeDetails =
-    $("#closeDetails");
+const detailsModal = $("#detailsModal");
+const detailsContent = $("#detailsContent");
+const closeDetails = $("#closeDetails");
 
 
 $$(".details-button").forEach(button => {
@@ -510,10 +584,11 @@ $$(".details-button").forEach(button => {
             const info =
                 jobs[job];
 
+            if (!info) return;
+
             detailsContent.innerHTML = `
 
-                <div class="job-icon dog"
-                     style="margin-bottom:15px">
+                <div class="job-icon dog">
                     ${info.icon}
                 </div>
 
@@ -523,42 +598,35 @@ $$(".details-button").forEach(button => {
 
                 <h2>${job}</h2>
 
-                <p>
-                    ${info.description}
-                </p>
+                <p>${info.description}</p>
+
+                <p>💵 <strong>${info.money}</strong></p>
+
+                <p>⏱️ <strong>${info.time}</strong></p>
 
                 <p>
-                    💵 <strong>${info.money}</strong>
+                    ⭐ <strong>
+                    Difficulty: ${info.difficulty}
+                    </strong>
                 </p>
 
-                <p>
-                    ⏱️ <strong>${info.time}</strong>
-                </p>
-
-                <p>
-                    ⭐ <strong>Difficulty:
-                    ${info.difficulty}</strong>
-                </p>
-
-                <h3>
-                    How to get started
-                </h3>
+                <h3>How to get started</h3>
 
                 <ol>
-                    ${info.steps.map(step =>
-                        `<li>${step}</li>`
-                    ).join("")}
+                    ${info.steps
+                        .map(step => `<li>${step}</li>`)
+                        .join("")}
                 </ol>
 
                 <div class="safety-card">
 
-                    🛡️
+                    <div class="safety-icon">🛡️</div>
 
-                    <span>
+                    <p>
                         Talk to a parent or guardian
                         when appropriate and keep
-                        personal information private.
-                    </span>
+                        your personal information private.
+                    </p>
 
                 </div>
 
@@ -574,33 +642,16 @@ $$(".details-button").forEach(button => {
 
 closeDetails.addEventListener(
     "click",
-    () =>
-        detailsModal.classList.remove("show")
+    () => detailsModal.classList.remove("show")
 );
 
 
 /* ==========================================
-   EARNINGS CALCULATOR
+   CALCULATOR
 ========================================== */
 
-const moneyPerJob =
-    $("#moneyPerJob");
-
-const jobsPerWeek =
-    $("#jobsPerWeek");
-
-const weeks =
-    $("#weeks");
-
-const weekly =
-    $("#weekly");
-
-const monthly =
-    $("#monthly");
-
-const yearly =
-    $("#yearly");
-
+const moneyPerJob = $("#moneyPerJob");
+const jobsPerWeek = $("#jobsPerWeek");
 
 function calculate() {
 
@@ -610,24 +661,23 @@ function calculate() {
     const jobs =
         Number(jobsPerWeek.value) || 0;
 
-    const week =
+    const weeklyAmount =
         money * jobs;
 
-    const month =
-        week * 4;
+    const monthlyAmount =
+        weeklyAmount * 4;
 
-    const year =
-        week * 52;
+    const yearlyAmount =
+        weeklyAmount * 52;
 
+    $("#weekly").textContent =
+        "$" + weeklyAmount.toFixed(2);
 
-    weekly.textContent =
-        "$" + week.toFixed(2);
+    $("#monthly").textContent =
+        "$" + monthlyAmount.toFixed(2);
 
-    monthly.textContent =
-        "$" + month.toFixed(2);
-
-    yearly.textContent =
-        "$" + year.toFixed(2);
+    $("#yearly").textContent =
+        "$" + yearlyAmount.toFixed(2);
 
 }
 
@@ -642,11 +692,6 @@ jobsPerWeek.addEventListener(
     calculate
 );
 
-weeks.addEventListener(
-    "input",
-    calculate
-);
-
 calculate();
 
 
@@ -654,20 +699,8 @@ calculate();
    SAVINGS GOAL
 ========================================== */
 
-const goalAmount =
-    $("#goalAmount");
-
-const savedAmount =
-    $("#savedAmount");
-
-const goalPercent =
-    $("#goalPercent");
-
-const goalText =
-    $("#goalText");
-
-const goalProgress =
-    $("#goalProgress");
+const goalAmount = $("#goalAmount");
+const savedAmount = $("#savedAmount");
 
 
 function updateGoal() {
@@ -678,39 +711,32 @@ function updateGoal() {
     const saved =
         Number(savedAmount.value) || 0;
 
-
     if (goal <= 0) {
 
-        goalPercent.textContent = "0%";
+        $("#goalPercent").textContent = "0%";
 
-        goalText.textContent =
+        $("#goalText").textContent =
             "$0 of $0 saved";
 
-        goalProgress.style.width = "0%";
+        $("#goalProgress").style.width = "0%";
 
         return;
-
     }
 
-
-    const percentage =
+    const percent =
         Math.min(
             100,
-            Math.round(
-                (saved / goal) * 100
-            )
+            Math.round((saved / goal) * 100)
         );
 
+    $("#goalPercent").textContent =
+        percent + "%";
 
-    goalPercent.textContent =
-        percentage + "%";
-
-    goalText.textContent =
+    $("#goalText").textContent =
         `$${saved} of $${goal} saved`;
 
-    goalProgress.style.width =
-        percentage + "%";
-
+    $("#goalProgress").style.width =
+        percent + "%";
 
     localStorage.setItem(
         "teenMoneyGoal",
@@ -736,25 +762,17 @@ savedAmount.addEventListener(
 );
 
 
-/* LOAD GOAL */
-
 const storedGoal =
-    localStorage.getItem(
-        "teenMoneyGoal"
-    );
+    localStorage.getItem("teenMoneyGoal");
 
 const storedSaved =
-    localStorage.getItem(
-        "teenMoneySaved"
-    );
-
+    localStorage.getItem("teenMoneySaved");
 
 if (storedGoal !== null)
     goalAmount.value = storedGoal;
 
 if (storedSaved !== null)
     savedAmount.value = storedSaved;
-
 
 updateGoal();
 
@@ -763,53 +781,31 @@ updateGoal();
    QUIZ
 ========================================== */
 
-const quizModal =
-    $("#quizModal");
-
-const openQuiz =
-    $("#openQuiz");
-
-const heroQuiz =
-    $("#heroQuiz");
-
-const closeQuiz =
-    $("#closeQuiz");
-
-const quizSubmit =
-    $("#quizSubmit");
-
-const quizResult =
-    $("#quizResult");
+const quizModal = $("#quizModal");
 
 
-function showQuiz() {
-
+function openQuiz() {
     quizModal.classList.add("show");
-
-    quizResult.style.display = "none";
-
 }
 
 
-openQuiz.addEventListener(
+$("#openQuiz").addEventListener(
     "click",
-    showQuiz
+    openQuiz
 );
 
-heroQuiz.addEventListener(
+$("#heroQuiz").addEventListener(
     "click",
-    showQuiz
+    openQuiz
+);
+
+$("#closeQuiz").addEventListener(
+    "click",
+    () => quizModal.classList.remove("show")
 );
 
 
-closeQuiz.addEventListener(
-    "click",
-    () =>
-        quizModal.classList.remove("show")
-);
-
-
-quizSubmit.addEventListener(
+$("#quizSubmit").addEventListener(
     "click",
     () => {
 
@@ -826,216 +822,172 @@ quizSubmit.addEventListener(
             $("#quizGoal").value;
 
 
-        const scores = {
+        const scores = {};
 
-            "Dog Walking": 0,
+        Object.keys(jobs).forEach(
+            job => scores[job] = 0
+        );
 
-            "Car Washing": 0,
-
-            "Gardening": 0,
-
-            "Video Editing": 0,
-
-            "Making Roblox Games": 0,
-
-            "YouTube Channel": 0
-
-        };
-
-
-        /* INTEREST */
 
         if (interest === "animals")
-            scores["Dog Walking"] += 7;
+            scores["Dog Walking"] += 10;
 
         if (interest === "outdoor") {
 
-            scores["Dog Walking"] += 3;
-
-            scores["Car Washing"] += 5;
-
-            scores["Gardening"] += 6;
+            scores["Gardening"] += 8;
+            scores["Car Washing"] += 7;
+            scores["Dog Walking"] += 5;
 
         }
 
         if (interest === "creative") {
 
-            scores["Video Editing"] += 7;
-
-            scores["YouTube Channel"] += 4;
+            scores["Graphic Design"] += 9;
+            scores["Video Editing"] += 9;
+            scores["Photography"] += 7;
+            scores["Making Thumbnails"] += 8;
 
         }
 
         if (interest === "technology") {
 
-            scores["Video Editing"] += 5;
-
-            scores["Making Roblox Games"] += 7;
+            scores["Website Design"] += 9;
+            scores["Making Roblox Games"] += 9;
+            scores["Video Editing"] += 6;
 
         }
 
         if (interest === "gaming") {
 
-            scores["Making Roblox Games"] += 8;
-
-            scores["YouTube Channel"] += 3;
+            scores["Making Roblox Games"] += 10;
+            scores["Game Testing"] += 9;
+            scores["YouTube Channel"] += 5;
 
         }
 
         if (interest === "people") {
 
-            scores["Dog Walking"] += 4;
-
-            scores["Car Washing"] += 3;
+            scores["Tutoring"] += 8;
+            scores["Pet Sitting"] += 5;
+            scores["Dog Walking"] += 5;
 
         }
 
 
-        /* LOCATION */
-
         if (location === "outside") {
 
-            scores["Dog Walking"] += 5;
-
-            scores["Car Washing"] += 5;
-
-            scores["Gardening"] += 5;
+            scores["Dog Walking"] += 7;
+            scores["Car Washing"] += 7;
+            scores["Gardening"] += 7;
+            scores["Pet Sitting"] += 5;
 
         }
 
         if (location === "online") {
 
-            scores["Video Editing"] += 5;
-
-            scores["Making Roblox Games"] += 5;
-
-            scores["YouTube Channel"] += 5;
+            scores["Website Design"] += 7;
+            scores["Video Editing"] += 7;
+            scores["YouTube Channel"] += 7;
+            scores["Graphic Design"] += 6;
 
         }
 
 
-        /* TIME */
-
         if (time === "little") {
 
-            scores["Dog Walking"] += 6;
-
-            scores["Car Washing"] += 3;
+            scores["Dog Walking"] += 7;
+            scores["Grocery Help"] += 6;
+            scores["Tutoring"] += 5;
 
         }
 
         if (time === "medium") {
 
-            scores["Gardening"] += 4;
-
-            scores["Video Editing"] += 4;
-
-            scores["Dog Walking"] += 2;
+            scores["Video Editing"] += 5;
+            scores["Photography"] += 5;
+            scores["Writing"] += 5;
 
         }
 
         if (time === "lots") {
 
-            scores["Video Editing"] += 5;
-
-            scores["Making Roblox Games"] += 6;
-
-            scores["YouTube Channel"] += 6;
+            scores["YouTube Channel"] += 7;
+            scores["Making Roblox Games"] += 7;
+            scores["Website Design"] += 6;
 
         }
 
 
-        /* GOAL */
-
         if (goal === "quick") {
 
-            scores["Dog Walking"] += 5;
-
-            scores["Car Washing"] += 4;
-
-            scores["Gardening"] += 3;
+            scores["Dog Walking"] += 7;
+            scores["Car Washing"] += 6;
+            scores["Cleaning"] += 6;
 
         }
 
         if (goal === "skill") {
 
-            scores["Video Editing"] += 6;
-
-            scores["Making Roblox Games"] += 5;
+            scores["Video Editing"] += 7;
+            scores["Website Design"] += 7;
+            scores["Graphic Design"] += 6;
 
         }
 
         if (goal === "long") {
 
-            scores["YouTube Channel"] += 6;
-
-            scores["Making Roblox Games"] += 5;
+            scores["YouTube Channel"] += 8;
+            scores["Making Roblox Games"] += 8;
+            scores["Selling Digital Designs"] += 6;
 
         }
 
 
-        /* RESULTS */
-
         const results =
             Object.entries(scores)
-                .sort(
-                    (a,b) =>
-                        b[1] - a[1]
-                )
-                .slice(0,3);
+                .sort((a, b) => b[1] - a[1])
+                .slice(0, 3);
 
 
-        quizResult.innerHTML = `
+        $("#quizResult").innerHTML = `
 
             <h3>🏆 Your Top 3 Matches</h3>
 
             ${results.map(
-                (result, index) => {
+                (result, index) => `
 
-                    const match =
-                        Math.min(
-                            99,
-                            50 + result[1] * 2
-                        );
+                    <div class="result-item">
 
-                    return `
+                        <strong>
+                            ${index + 1}.
+                            ${result[0]}
+                        </strong>
 
-                        <div class="result-item">
+                        <br>
 
-                            <strong>
-                                ${index + 1}.
-                                ${result[0]}
-                            </strong>
+                        ⭐ Great match for your answers
 
-                            <br>
+                    </div>
 
-                            ⭐ Approx.
-                            ${match}% match
-
-                        </div>
-
-                    `;
-
-                }
+                `
             ).join("")}
 
             <p>
-                💡 A quiz result is only a suggestion.
-                Choose something you enjoy and make sure
-                it's appropriate and safe for you.
+                💡 These are suggestions, not guarantees.
+                Always make sure the activity is safe
+                and appropriate for you.
             </p>
 
         `;
 
-        quizResult.style.display =
-            "block";
+        $("#quizResult").style.display = "block";
 
     }
 );
 
 
 /* ==========================================
-   MODAL BACKGROUND CLICK
+   MODAL CLOSE
 ========================================== */
 
 $$(".modal").forEach(modal => {
@@ -1045,9 +997,7 @@ $$(".modal").forEach(modal => {
         event => {
 
             if (event.target === modal) {
-
                 modal.classList.remove("show");
-
             }
 
         }
@@ -1056,20 +1006,16 @@ $$(".modal").forEach(modal => {
 });
 
 
-/* ==========================================
-   ESCAPE KEY
-========================================== */
-
 document.addEventListener(
     "keydown",
     event => {
 
         if (event.key === "Escape") {
 
-            $$(".modal.show")
-                .forEach(modal =>
+            $$(".modal.show").forEach(
+                modal =>
                     modal.classList.remove("show")
-                );
+            );
 
         }
 
@@ -1081,38 +1027,27 @@ document.addEventListener(
    BACK TO TOP
 ========================================== */
 
-const backTop =
-    $("#backTop");
-
+const backTop = $("#backTop");
 
 window.addEventListener(
     "scroll",
     () => {
 
-        if (window.scrollY > 500) {
-
-            backTop.classList.add("show");
-
-        } else {
-
-            backTop.classList.remove("show");
-
-        }
+        backTop.classList.toggle(
+            "show",
+            window.scrollY > 500
+        );
 
     }
 );
-
 
 backTop.addEventListener(
     "click",
     () => {
 
         window.scrollTo({
-
             top: 0,
-
             behavior: "smooth"
-
         });
 
     }
@@ -1120,24 +1055,32 @@ backTop.addEventListener(
 
 
 /* ==========================================
-   COUNT IDEAS
+   MOBILE MENU
 ========================================== */
 
-const cards =
-    $$(".money-card");
+$("#mobileMenu").addEventListener(
+    "click",
+    () => {
 
-$("#ideaCount").textContent =
-    cards.length + "+";
+        $("#nav").classList.toggle(
+            "mobile-open"
+        );
+
+    }
+);
 
 
 /* ==========================================
-   STARTUP
+   START
 ========================================== */
 
-filterJobs();
+$("#ideaCount").textContent =
+    $$(".money-card").length + "+";
 
+filterJobs();
 sortJobs();
+updateFavorites();
 
 console.log(
-    "Teen Money 2.0 loaded successfully 🚀"
+    "Teen Money - 20 ideas loaded successfully 🚀"
 );
