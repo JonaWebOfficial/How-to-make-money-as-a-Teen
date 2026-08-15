@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-          content="Teen Money - discover realistic ways to earn money and learn useful skills as a teenager.">
+          content="Teen Money - discover realistic ways to earn money and build useful skills as a teenager.">
 
     <title>Teen Money | Make Money as a Teen</title>
 
@@ -14,8 +14,6 @@
 
 <body>
 
-<!-- ================= HEADER ================= -->
-
 <header class="header">
 
     <a href="#home" class="logo">
@@ -23,50 +21,27 @@
     </a>
 
     <nav class="nav" id="nav">
-
         <a href="#home">Home</a>
         <a href="#ideas">Ideas</a>
         <a href="#calculator">Calculator</a>
         <a href="#tips">Tips</a>
-
     </nav>
 
     <div class="header-actions">
-
-        <button
-            id="themeButton"
-            class="icon-button"
-            aria-label="Toggle dark mode">
-            🌙
-        </button>
-
-        <button
-            id="openQuiz"
-            class="header-quiz">
-            🎯 Find My Job
-        </button>
-
+        <button id="themeButton" class="icon-button">🌙</button>
+        <button id="openQuiz" class="header-quiz">🎯 Find My Job</button>
     </div>
 
-    <button
-        id="mobileMenu"
-        class="mobile-menu"
-        aria-label="Open menu">
-        ☰
-    </button>
+    <button id="mobileMenu" class="mobile-menu">☰</button>
 
 </header>
 
-
-<!-- ================= HERO ================= -->
 
 <section id="home" class="hero">
 
     <div class="hero-text">
 
-        <div class="badge">
-            🚀 Teen Money Guide
-        </div>
+        <div class="badge">🚀 Teen Money Guide</div>
 
         <h1>
             Find a way to
@@ -81,15 +56,11 @@
 
         <div class="hero-buttons">
 
-            <button
-                id="heroQuiz"
-                class="primary-button">
+            <button id="heroQuiz" class="primary-button">
                 🎯 Find My Best Option
             </button>
 
-            <a
-                href="#ideas"
-                class="secondary-button">
+            <a href="#ideas" class="secondary-button">
                 Explore Ideas ↓
             </a>
 
@@ -98,7 +69,7 @@
         <div class="hero-stats">
 
             <div>
-                <strong id="ideaCount">6+</strong>
+                <strong id="ideaCount">20+</strong>
                 <span>Money Ideas</span>
             </div>
 
@@ -117,23 +88,14 @@
     </div>
 
 
-    <!-- JOB OF THE DAY -->
-
     <div class="featured-card">
 
         <div class="featured-top">
-
             <span>⭐ JOB OF THE DAY</span>
-
-            <span class="featured-label">
-                Beginner Friendly
-            </span>
-
+            <span class="featured-label">Beginner Friendly</span>
         </div>
 
-        <div class="featured-icon">
-            🐶
-        </div>
+        <div class="featured-icon">🐶</div>
 
         <h2>Dog Walking</h2>
 
@@ -143,16 +105,12 @@
         </p>
 
         <div class="featured-info">
-
             <span>💵 $10–$20</span>
             <span>⏱️ 30–45 min</span>
             <span>⭐ 2/10</span>
-
         </div>
 
-        <button
-            class="details-button featured-details"
-            data-job="Dog Walking">
+        <button class="details-button" data-job="Dog Walking">
             Learn More →
         </button>
 
@@ -160,8 +118,6 @@
 
 </section>
 
-
-<!-- ================= SEARCH ================= -->
 
 <section class="search-section">
 
@@ -174,18 +130,13 @@
             <input
                 id="searchInput"
                 type="text"
-                placeholder="Search jobs..."
-                autocomplete="off">
+                placeholder="Search money-making ideas...">
 
-            <button id="clearSearch">
-                ✕
-            </button>
+            <button id="clearSearch">✕</button>
 
         </div>
 
-        <button
-            id="favoritesFilter"
-            class="favorites-button">
+        <button id="favoritesFilter" class="favorites-button">
             ⭐ My Favorites
         </button>
 
@@ -194,8 +145,6 @@
 </section>
 
 
-<!-- ================= MAIN ================= -->
-
 <main>
 
 <section id="ideas" class="section">
@@ -203,43 +152,25 @@
     <div class="section-header">
 
         <div>
+            <span class="section-label">EXPLORE</span>
 
-            <span class="section-label">
-                EXPLORE
-            </span>
-
-            <h2>Money-Making Ideas</h2>
+            <h2>20 Ways Teens Can Make Money</h2>
 
             <p>
-                Compare different ideas and find one
-                that fits you.
+                Compare different ideas and find one that fits you.
             </p>
-
         </div>
 
         <div class="filters">
 
             <select id="categoryFilter">
 
-                <option value="all">
-                    All Categories
-                </option>
-
-                <option value="local">
-                    🏡 Local
-                </option>
-
-                <option value="online">
-                    💻 Online
-                </option>
-
-                <option value="creative">
-                    🎨 Creative
-                </option>
-
-                <option value="gaming">
-                    🎮 Gaming
-                </option>
+                <option value="all">All Categories</option>
+                <option value="local">🏡 Local</option>
+                <option value="online">💻 Online</option>
+                <option value="creative">🎨 Creative</option>
+                <option value="gaming">🎮 Gaming</option>
+                <option value="education">📚 Education</option>
 
             </select>
 
@@ -268,419 +199,871 @@
     </div>
 
 
-    <div
-        id="noResults"
-        class="no-results">
-
+    <div id="noResults" class="no-results">
         🔎 No matching ideas found.
-
     </div>
 
 
-    <div
-        id="moneyGrid"
-        class="money-grid">
+    <div id="moneyGrid" class="money-grid">
 
 
-        <!-- DOG WALKING -->
+        <!-- 1 -->
 
-        <article
-            class="money-card"
+        <article class="money-card"
             data-name="Dog Walking"
             data-category="local"
             data-difficulty="2"
             data-earnings="20"
             data-time="45">
 
-            <button
-                class="favorite"
-                data-job="Dog Walking">
-                ☆
-            </button>
+            <button class="favorite" data-job="Dog Walking">☆</button>
 
-            <div class="job-icon dog">
-                🐶
-            </div>
+            <div class="job-icon dog">🐶</div>
 
             <div class="job-body">
 
                 <div class="job-title">
-
                     <h3>Dog Walking</h3>
-
-                    <span class="tag easy">
-                        2/10
-                    </span>
-
+                    <span class="tag easy">2/10</span>
                 </div>
 
-                <p>
-                    Walk dogs for people in your neighborhood.
-                </p>
+                <p>Walk dogs for people in your neighborhood.</p>
 
                 <div class="job-meta">
-
                     <span>💵 $10–$20</span>
                     <span>⏱️ 30–45 min</span>
-
                 </div>
 
                 <div class="difficulty">
-
                     <div class="difficulty-top">
                         <span>Difficulty</span>
                         <strong>2/10</strong>
                     </div>
-
-                    <div class="bar">
-                        <i style="width:20%"></i>
-                    </div>
-
+                    <div class="bar"><i style="width:20%"></i></div>
                 </div>
 
-                <button
-                    class="details-button"
-                    data-job="Dog Walking">
+                <button class="details-button" data-job="Dog Walking">
                     View Guide →
                 </button>
 
             </div>
-
         </article>
 
 
-        <!-- CAR WASHING -->
+        <!-- 2 -->
 
-        <article
-            class="money-card"
+        <article class="money-card"
             data-name="Car Washing"
             data-category="local"
             data-difficulty="3"
             data-earnings="30"
             data-time="120">
 
-            <button
-                class="favorite"
-                data-job="Car Washing">
-                ☆
-            </button>
+            <button class="favorite" data-job="Car Washing">☆</button>
 
-            <div class="job-icon car">
-                🚗
-            </div>
+            <div class="job-icon car">🚗</div>
 
             <div class="job-body">
 
                 <div class="job-title">
-
                     <h3>Car Washing</h3>
-
-                    <span class="tag easy">
-                        3/10
-                    </span>
-
+                    <span class="tag easy">3/10</span>
                 </div>
 
-                <p>
-                    Wash cars for people you know or in your area.
-                </p>
+                <p>Wash cars for people you know or in your area.</p>
 
                 <div class="job-meta">
-
                     <span>💵 $15–$30</span>
                     <span>⏱️ 1–2 hrs</span>
-
                 </div>
 
                 <div class="difficulty">
-
                     <div class="difficulty-top">
                         <span>Difficulty</span>
                         <strong>3/10</strong>
                     </div>
-
-                    <div class="bar">
-                        <i style="width:30%"></i>
-                    </div>
-
+                    <div class="bar"><i style="width:30%"></i></div>
                 </div>
 
-                <button
-                    class="details-button"
-                    data-job="Car Washing">
+                <button class="details-button" data-job="Car Washing">
                     View Guide →
                 </button>
 
             </div>
-
         </article>
 
 
-        <!-- GARDENING -->
+        <!-- 3 -->
 
-        <article
-            class="money-card"
+        <article class="money-card"
             data-name="Gardening"
             data-category="local"
             data-difficulty="4"
             data-earnings="30"
             data-time="180">
 
-            <button
-                class="favorite"
-                data-job="Gardening">
-                ☆
-            </button>
+            <button class="favorite" data-job="Gardening">☆</button>
 
-            <div class="job-icon garden">
-                🌱
-            </div>
+            <div class="job-icon garden">🌱</div>
 
             <div class="job-body">
 
                 <div class="job-title">
-
                     <h3>Gardening</h3>
-
-                    <span class="tag medium">
-                        4/10
-                    </span>
-
+                    <span class="tag medium">4/10</span>
                 </div>
 
-                <p>
-                    Help people with simple outdoor jobs.
-                </p>
+                <p>Help people with simple gardening jobs.</p>
 
                 <div class="job-meta">
-
                     <span>💵 $10–$30</span>
                     <span>⏱️ 1–3 hrs</span>
-
                 </div>
 
                 <div class="difficulty">
-
                     <div class="difficulty-top">
                         <span>Difficulty</span>
                         <strong>4/10</strong>
                     </div>
-
-                    <div class="bar">
-                        <i style="width:40%"></i>
-                    </div>
-
+                    <div class="bar"><i style="width:40%"></i></div>
                 </div>
 
-                <button
-                    class="details-button"
-                    data-job="Gardening">
+                <button class="details-button" data-job="Gardening">
                     View Guide →
                 </button>
 
             </div>
-
         </article>
 
 
-        <!-- VIDEO EDITING -->
+        <!-- 4 -->
 
-        <article
-            class="money-card"
+        <article class="money-card"
+            data-name="Cleaning"
+            data-category="local"
+            data-difficulty="3"
+            data-earnings="30"
+            data-time="120">
+
+            <button class="favorite" data-job="Cleaning">☆</button>
+
+            <div class="job-icon cleaning">🧹</div>
+
+            <div class="job-body">
+
+                <div class="job-title">
+                    <h3>Cleaning</h3>
+                    <span class="tag easy">3/10</span>
+                </div>
+
+                <p>Help people with simple cleaning tasks.</p>
+
+                <div class="job-meta">
+                    <span>💵 $10–$30</span>
+                    <span>⏱️ 1–2 hrs</span>
+                </div>
+
+                <div class="difficulty">
+                    <div class="difficulty-top">
+                        <span>Difficulty</span>
+                        <strong>3/10</strong>
+                    </div>
+                    <div class="bar"><i style="width:30%"></i></div>
+                </div>
+
+                <button class="details-button" data-job="Cleaning">
+                    View Guide →
+                </button>
+
+            </div>
+        </article>
+
+
+        <!-- 5 -->
+
+        <article class="money-card"
+            data-name="Grocery Help"
+            data-category="local"
+            data-difficulty="2"
+            data-earnings="20"
+            data-time="60">
+
+            <button class="favorite" data-job="Grocery Help">☆</button>
+
+            <div class="job-icon grocery">🛒</div>
+
+            <div class="job-body">
+
+                <div class="job-title">
+                    <h3>Grocery Help</h3>
+                    <span class="tag easy">2/10</span>
+                </div>
+
+                <p>Help someone with simple grocery-related tasks.</p>
+
+                <div class="job-meta">
+                    <span>💵 $10–$20</span>
+                    <span>⏱️ Around 1 hr</span>
+                </div>
+
+                <div class="difficulty">
+                    <div class="difficulty-top">
+                        <span>Difficulty</span>
+                        <strong>2/10</strong>
+                    </div>
+                    <div class="bar"><i style="width:20%"></i></div>
+                </div>
+
+                <button class="details-button" data-job="Grocery Help">
+                    View Guide →
+                </button>
+
+            </div>
+        </article>
+
+
+        <!-- 6 -->
+
+        <article class="money-card"
+            data-name="Helping With Moving"
+            data-category="local"
+            data-difficulty="5"
+            data-earnings="50"
+            data-time="240">
+
+            <button class="favorite" data-job="Helping With Moving">☆</button>
+
+            <div class="job-icon moving">📦</div>
+
+            <div class="job-body">
+
+                <div class="job-title">
+                    <h3>Helping With Moving</h3>
+                    <span class="tag medium">5/10</span>
+                </div>
+
+                <p>Help with simple moving and organizing tasks.</p>
+
+                <div class="job-meta">
+                    <span>💵 $20–$50</span>
+                    <span>⏱️ 2–4 hrs</span>
+                </div>
+
+                <div class="difficulty">
+                    <div class="difficulty-top">
+                        <span>Difficulty</span>
+                        <strong>5/10</strong>
+                    </div>
+                    <div class="bar"><i style="width:50%"></i></div>
+                </div>
+
+                <button class="details-button" data-job="Helping With Moving">
+                    View Guide →
+                </button>
+
+            </div>
+        </article>
+
+
+        <!-- 7 -->
+
+        <article class="money-card"
+            data-name="Pet Sitting"
+            data-category="local"
+            data-difficulty="3"
+            data-earnings="40"
+            data-time="120">
+
+            <button class="favorite" data-job="Pet Sitting">☆</button>
+
+            <div class="job-icon pet">🐱</div>
+
+            <div class="job-body">
+
+                <div class="job-title">
+                    <h3>Pet Sitting</h3>
+                    <span class="tag easy">3/10</span>
+                </div>
+
+                <p>Look after pets for people you know.</p>
+
+                <div class="job-meta">
+                    <span>💵 $15–$40</span>
+                    <span>⏱️ 1–2 hrs+</span>
+                </div>
+
+                <div class="difficulty">
+                    <div class="difficulty-top">
+                        <span>Difficulty</span>
+                        <strong>3/10</strong>
+                    </div>
+                    <div class="bar"><i style="width:30%"></i></div>
+                </div>
+
+                <button class="details-button" data-job="Pet Sitting">
+                    View Guide →
+                </button>
+
+            </div>
+        </article>
+
+
+        <!-- 8 -->
+
+        <article class="money-card"
             data-name="Video Editing"
             data-category="creative"
             data-difficulty="6"
             data-earnings="100"
             data-time="300">
 
-            <button
-                class="favorite"
-                data-job="Video Editing">
-                ☆
-            </button>
+            <button class="favorite" data-job="Video Editing">☆</button>
 
-            <div class="job-icon editing">
-                🎬
-            </div>
+            <div class="job-icon editing">🎬</div>
 
             <div class="job-body">
 
                 <div class="job-title">
-
                     <h3>Video Editing</h3>
-
-                    <span class="tag medium">
-                        6/10
-                    </span>
-
+                    <span class="tag medium">6/10</span>
                 </div>
 
-                <p>
-                    Learn editing and create videos for others.
-                </p>
+                <p>Edit videos for yourself or other creators.</p>
 
                 <div class="job-meta">
-
                     <span>💵 $20–$100</span>
                     <span>⏱️ 2–5 hrs</span>
-
                 </div>
 
                 <div class="difficulty">
-
                     <div class="difficulty-top">
                         <span>Difficulty</span>
                         <strong>6/10</strong>
                     </div>
-
-                    <div class="bar">
-                        <i style="width:60%"></i>
-                    </div>
-
+                    <div class="bar"><i style="width:60%"></i></div>
                 </div>
 
-                <button
-                    class="details-button"
-                    data-job="Video Editing">
+                <button class="details-button" data-job="Video Editing">
                     View Guide →
                 </button>
 
             </div>
-
         </article>
 
 
-        <!-- ROBLOX -->
+        <!-- 9 -->
 
-        <article
-            class="money-card"
-            data-name="Making Roblox Games"
-            data-category="gaming"
-            data-difficulty="8"
-            data-earnings="500"
-            data-time="600">
+        <article class="money-card"
+            data-name="Graphic Design"
+            data-category="creative"
+            data-difficulty="6"
+            data-earnings="100"
+            data-time="240">
 
-            <button
-                class="favorite"
-                data-job="Making Roblox Games">
-                ☆
-            </button>
+            <button class="favorite" data-job="Graphic Design">☆</button>
 
-            <div class="job-icon gaming">
-                🎮
-            </div>
+            <div class="job-icon design">🎨</div>
 
             <div class="job-body">
 
                 <div class="job-title">
-
-                    <h3>Making Roblox Games</h3>
-
-                    <span class="tag hard">
-                        8/10
-                    </span>
-
+                    <h3>Graphic Design</h3>
+                    <span class="tag medium">6/10</span>
                 </div>
 
-                <p>
-                    Learn game development and build your own games.
-                </p>
+                <p>Create posters, logos, social media graphics and more.</p>
 
                 <div class="job-meta">
-
-                    <span>💵 Varies</span>
-                    <span>⏱️ Many hrs</span>
-
+                    <span>💵 $20–$100</span>
+                    <span>⏱️ 2–4 hrs</span>
                 </div>
 
                 <div class="difficulty">
-
                     <div class="difficulty-top">
                         <span>Difficulty</span>
-                        <strong>8/10</strong>
+                        <strong>6/10</strong>
                     </div>
-
-                    <div class="bar">
-                        <i style="width:80%"></i>
-                    </div>
-
+                    <div class="bar"><i style="width:60%"></i></div>
                 </div>
 
-                <button
-                    class="details-button"
-                    data-job="Making Roblox Games">
+                <button class="details-button" data-job="Graphic Design">
                     View Guide →
                 </button>
 
             </div>
-
         </article>
 
 
-        <!-- YOUTUBE -->
+        <!-- 10 -->
 
-        <article
-            class="money-card"
+        <article class="money-card"
+            data-name="Photography"
+            data-category="creative"
+            data-difficulty="5"
+            data-earnings="80"
+            data-time="180">
+
+            <button class="favorite" data-job="Photography">☆</button>
+
+            <div class="job-icon photo">📸</div>
+
+            <div class="job-body">
+
+                <div class="job-title">
+                    <h3>Photography</h3>
+                    <span class="tag medium">5/10</span>
+                </div>
+
+                <p>Practice photography and create useful images.</p>
+
+                <div class="job-meta">
+                    <span>💵 $20–$80</span>
+                    <span>⏱️ 1–3 hrs</span>
+                </div>
+
+                <div class="difficulty">
+                    <div class="difficulty-top">
+                        <span>Difficulty</span>
+                        <strong>5/10</strong>
+                    </div>
+                    <div class="bar"><i style="width:50%"></i></div>
+                </div>
+
+                <button class="details-button" data-job="Photography">
+                    View Guide →
+                </button>
+
+            </div>
+        </article>
+
+
+        <!-- 11 -->
+
+        <article class="money-card"
             data-name="YouTube Channel"
             data-category="online"
             data-difficulty="9"
             data-earnings="1000"
             data-time="600">
 
-            <button
-                class="favorite"
-                data-job="YouTube Channel">
-                ☆
-            </button>
+            <button class="favorite" data-job="YouTube Channel">☆</button>
 
-            <div class="job-icon youtube">
-                ▶️
-            </div>
+            <div class="job-icon youtube">▶️</div>
 
             <div class="job-body">
 
                 <div class="job-title">
-
                     <h3>YouTube Channel</h3>
-
-                    <span class="tag hard">
-                        9/10
-                    </span>
-
+                    <span class="tag hard">9/10</span>
                 </div>
 
-                <p>
-                    Create videos and build an audience over time.
-                </p>
+                <p>Create videos and build an audience over time.</p>
 
                 <div class="job-meta">
-
                     <span>💵 Varies</span>
                     <span>⏱️ Many hrs</span>
-
                 </div>
 
                 <div class="difficulty">
-
                     <div class="difficulty-top">
                         <span>Difficulty</span>
                         <strong>9/10</strong>
                     </div>
-
-                    <div class="bar">
-                        <i style="width:90%"></i>
-                    </div>
-
+                    <div class="bar"><i style="width:90%"></i></div>
                 </div>
 
-                <button
-                    class="details-button"
-                    data-job="YouTube Channel">
+                <button class="details-button" data-job="YouTube Channel">
                     View Guide →
                 </button>
 
             </div>
+        </article>
 
+
+        <!-- 12 -->
+
+        <article class="money-card"
+            data-name="Making Roblox Games"
+            data-category="gaming"
+            data-difficulty="8"
+            data-earnings="500"
+            data-time="600">
+
+            <button class="favorite" data-job="Making Roblox Games">☆</button>
+
+            <div class="job-icon gaming">🎮</div>
+
+            <div class="job-body">
+
+                <div class="job-title">
+                    <h3>Making Roblox Games</h3>
+                    <span class="tag hard">8/10</span>
+                </div>
+
+                <p>Learn game development and build your own games.</p>
+
+                <div class="job-meta">
+                    <span>💵 Varies</span>
+                    <span>⏱️ Many hrs</span>
+                </div>
+
+                <div class="difficulty">
+                    <div class="difficulty-top">
+                        <span>Difficulty</span>
+                        <strong>8/10</strong>
+                    </div>
+                    <div class="bar"><i style="width:80%"></i></div>
+                </div>
+
+                <button class="details-button" data-job="Making Roblox Games">
+                    View Guide →
+                </button>
+
+            </div>
+        </article>
+
+
+        <!-- 13 -->
+
+        <article class="money-card"
+            data-name="Website Design"
+            data-category="online"
+            data-difficulty="7"
+            data-earnings="200"
+            data-time="360">
+
+            <button class="favorite" data-job="Website Design">☆</button>
+
+            <div class="job-icon website">🌐</div>
+
+            <div class="job-body">
+
+                <div class="job-title">
+                    <h3>Website Design</h3>
+                    <span class="tag hard">7/10</span>
+                </div>
+
+                <p>Learn HTML, CSS and JavaScript and build websites.</p>
+
+                <div class="job-meta">
+                    <span>💵 $30–$200+</span>
+                    <span>⏱️ Several hrs</span>
+                </div>
+
+                <div class="difficulty">
+                    <div class="difficulty-top">
+                        <span>Difficulty</span>
+                        <strong>7/10</strong>
+                    </div>
+                    <div class="bar"><i style="width:70%"></i></div>
+                </div>
+
+                <button class="details-button" data-job="Website Design">
+                    View Guide →
+                </button>
+
+            </div>
+        </article>
+
+
+        <!-- 14 -->
+
+        <article class="money-card"
+            data-name="Writing"
+            data-category="online"
+            data-difficulty="5"
+            data-earnings="60"
+            data-time="180">
+
+            <button class="favorite" data-job="Writing">☆</button>
+
+            <div class="job-icon writing">✍️</div>
+
+            <div class="job-body">
+
+                <div class="job-title">
+                    <h3>Writing</h3>
+                    <span class="tag medium">5/10</span>
+                </div>
+
+                <p>Practice writing articles, stories or other content.</p>
+
+                <div class="job-meta">
+                    <span>💵 $10–$60+</span>
+                    <span>⏱️ 1–3 hrs</span>
+                </div>
+
+                <div class="difficulty">
+                    <div class="difficulty-top">
+                        <span>Difficulty</span>
+                        <strong>5/10</strong>
+                    </div>
+                    <div class="bar"><i style="width:50%"></i></div>
+                </div>
+
+                <button class="details-button" data-job="Writing">
+                    View Guide →
+                </button>
+
+            </div>
+        </article>
+
+
+        <!-- 15 -->
+
+        <article class="money-card"
+            data-name="Social Media Editing"
+            data-category="online"
+            data-difficulty="6"
+            data-earnings="100"
+            data-time="240">
+
+            <button class="favorite" data-job="Social Media Editing">☆</button>
+
+            <div class="job-icon social">📱</div>
+
+            <div class="job-body">
+
+                <div class="job-title">
+                    <h3>Social Media Editing</h3>
+                    <span class="tag medium">6/10</span>
+                </div>
+
+                <p>Create and edit short-form social media content.</p>
+
+                <div class="job-meta">
+                    <span>💵 $20–$100</span>
+                    <span>⏱️ 2–4 hrs</span>
+                </div>
+
+                <div class="difficulty">
+                    <div class="difficulty-top">
+                        <span>Difficulty</span>
+                        <strong>6/10</strong>
+                    </div>
+                    <div class="bar"><i style="width:60%"></i></div>
+                </div>
+
+                <button class="details-button" data-job="Social Media Editing">
+                    View Guide →
+                </button>
+
+            </div>
+        </article>
+
+
+        <!-- 16 -->
+
+        <article class="money-card"
+            data-name="Making Thumbnails"
+            data-category="creative"
+            data-difficulty="5"
+            data-earnings="60"
+            data-time="120">
+
+            <button class="favorite" data-job="Making Thumbnails">☆</button>
+
+            <div class="job-icon thumbnail">🖼️</div>
+
+            <div class="job-body">
+
+                <div class="job-title">
+                    <h3>Making Thumbnails</h3>
+                    <span class="tag medium">5/10</span>
+                </div>
+
+                <p>Design thumbnails for videos and social media.</p>
+
+                <div class="job-meta">
+                    <span>💵 $10–$60</span>
+                    <span>⏱️ 1–2 hrs</span>
+                </div>
+
+                <div class="difficulty">
+                    <div class="difficulty-top">
+                        <span>Difficulty</span>
+                        <strong>5/10</strong>
+                    </div>
+                    <div class="bar"><i style="width:50%"></i></div>
+                </div>
+
+                <button class="details-button" data-job="Making Thumbnails">
+                    View Guide →
+                </button>
+
+            </div>
+        </article>
+
+
+        <!-- 17 -->
+
+        <article class="money-card"
+            data-name="Selling Crafts"
+            data-category="creative"
+            data-difficulty="5"
+            data-earnings="80"
+            data-time="240">
+
+            <button class="favorite" data-job="Selling Crafts">☆</button>
+
+            <div class="job-icon crafts">👕</div>
+
+            <div class="job-body">
+
+                <div class="job-title">
+                    <h3>Selling Crafts</h3>
+                    <span class="tag medium">5/10</span>
+                </div>
+
+                <p>Create handmade products and sell them with permission.</p>
+
+                <div class="job-meta">
+                    <span>💵 Varies</span>
+                    <span>⏱️ Several hrs</span>
+                </div>
+
+                <div class="difficulty">
+                    <div class="difficulty-top">
+                        <span>Difficulty</span>
+                        <strong>5/10</strong>
+                    </div>
+                    <div class="bar"><i style="width:50%"></i></div>
+                </div>
+
+                <button class="details-button" data-job="Selling Crafts">
+                    View Guide →
+                </button>
+
+            </div>
+        </article>
+
+
+        <!-- 18 -->
+
+        <article class="money-card"
+            data-name="Tutoring"
+            data-category="education"
+            data-difficulty="5"
+            data-earnings="50"
+            data-time="60">
+
+            <button class="favorite" data-job="Tutoring">☆</button>
+
+            <div class="job-icon tutoring">📚</div>
+
+            <div class="job-body">
+
+                <div class="job-title">
+                    <h3>Tutoring</h3>
+                    <span class="tag medium">5/10</span>
+                </div>
+
+                <p>Help younger students understand subjects you know well.</p>
+
+                <div class="job-meta">
+                    <span>💵 $10–$50</span>
+                    <span>⏱️ Around 1 hr</span>
+                </div>
+
+                <div class="difficulty">
+                    <div class="difficulty-top">
+                        <span>Difficulty</span>
+                        <strong>5/10</strong>
+                    </div>
+                    <div class="bar"><i style="width:50%"></i></div>
+                </div>
+
+                <button class="details-button" data-job="Tutoring">
+                    View Guide →
+                </button>
+
+            </div>
+        </article>
+
+
+        <!-- 19 -->
+
+        <article class="money-card"
+            data-name="Game Testing"
+            data-category="gaming"
+            data-difficulty="6"
+            data-earnings="80"
+            data-time="180">
+
+            <button class="favorite" data-job="Game Testing">☆</button>
+
+            <div class="job-icon testing">🕹️</div>
+
+            <div class="job-body">
+
+                <div class="job-title">
+                    <h3>Game Testing</h3>
+                    <span class="tag medium">6/10</span>
+                </div>
+
+                <p>Test games when legitimate opportunities are available.</p>
+
+                <div class="job-meta">
+                    <span>💵 Varies</span>
+                    <span>⏱️ 1–3 hrs</span>
+                </div>
+
+                <div class="difficulty">
+                    <div class="difficulty-top">
+                        <span>Difficulty</span>
+                        <strong>6/10</strong>
+                    </div>
+                    <div class="bar"><i style="width:60%"></i></div>
+                </div>
+
+                <button class="details-button" data-job="Game Testing">
+                    View Guide →
+                </button>
+
+            </div>
+        </article>
+
+
+        <!-- 20 -->
+
+        <article class="money-card"
+            data-name="Selling Digital Designs"
+            data-category="online"
+            data-difficulty="7"
+            data-earnings="150"
+            data-time="300">
+
+            <button class="favorite" data-job="Selling Digital Designs">☆</button>
+
+            <div class="job-icon digital">💡</div>
+
+            <div class="job-body">
+
+                <div class="job-title">
+                    <h3>Selling Digital Designs</h3>
+                    <span class="tag hard">7/10</span>
+                </div>
+
+                <p>Create digital artwork, templates or designs.</p>
+
+                <div class="job-meta">
+                    <span>💵 Varies</span>
+                    <span>⏱️ Several hrs</span>
+                </div>
+
+                <div class="difficulty">
+                    <div class="difficulty-top">
+                        <span>Difficulty</span>
+                        <strong>7/10</strong>
+                    </div>
+                    <div class="bar"><i style="width:70%"></i></div>
+                </div>
+
+                <button class="details-button" data-job="Selling Digital Designs">
+                    View Guide →
+                </button>
+
+            </div>
         </article>
 
     </div>
@@ -688,26 +1071,16 @@
 </section>
 
 
-<!-- ================= CALCULATOR ================= -->
-
-<section
-    id="calculator"
-    class="section calculator-section">
+<section id="calculator" class="section calculator-section">
 
     <div class="section-header">
 
         <div>
-
-            <span class="section-label">
-                CALCULATOR
-            </span>
+            <span class="section-label">CALCULATOR</span>
 
             <h2>💰 Earnings Calculator</h2>
 
-            <p>
-                Create your own simple earnings estimate.
-            </p>
-
+            <p>Create your own simple earnings estimate.</p>
         </div>
 
     </div>
@@ -717,18 +1090,11 @@
 
         <div class="calculator-input">
 
-            <label>
-                Money per job
-            </label>
+            <label>Money per job</label>
 
             <div class="input-with-symbol">
                 <span>$</span>
-
-                <input
-                    id="moneyPerJob"
-                    type="number"
-                    min="0"
-                    value="15">
+                <input id="moneyPerJob" type="number" min="0" value="15">
             </div>
 
         </div>
@@ -736,30 +1102,18 @@
 
         <div class="calculator-input">
 
-            <label>
-                Jobs per week
-            </label>
+            <label>Jobs per week</label>
 
-            <input
-                id="jobsPerWeek"
-                type="number"
-                min="0"
-                value="3">
+            <input id="jobsPerWeek" type="number" min="0" value="3">
 
         </div>
 
 
         <div class="calculator-input">
 
-            <label>
-                Weeks
-            </label>
+            <label>Weeks</label>
 
-            <input
-                id="weeks"
-                type="number"
-                min="1"
-                value="4">
+            <input id="weeks" type="number" min="1" value="4">
 
         </div>
 
@@ -777,14 +1131,14 @@
             </div>
 
             <div>
-                <span>Yearly*</span>
+                <span>Yearly</span>
                 <strong id="yearly">$2,340</strong>
             </div>
 
         </div>
 
         <small>
-            *Estimates only. Actual earnings can vary.
+            Estimates only. Actual earnings can vary.
         </small>
 
     </div>
@@ -792,24 +1146,16 @@
 </section>
 
 
-<!-- ================= SAVINGS GOAL ================= -->
-
 <section class="section">
 
     <div class="section-header">
 
         <div>
-
-            <span class="section-label">
-                YOUR GOAL
-            </span>
+            <span class="section-label">YOUR GOAL</span>
 
             <h2>🎯 Savings Goal</h2>
 
-            <p>
-                Set a target and track your progress.
-            </p>
-
+            <p>Set a target and track your progress.</p>
         </div>
 
     </div>
@@ -820,7 +1166,6 @@
         <div class="goal-inputs">
 
             <div>
-
                 <label>Goal</label>
 
                 <input
@@ -828,11 +1173,9 @@
                     type="number"
                     min="0"
                     value="500">
-
             </div>
 
             <div>
-
                 <label>Saved</label>
 
                 <input
@@ -840,7 +1183,6 @@
                     type="number"
                     min="0"
                     value="0">
-
             </div>
 
         </div>
@@ -850,9 +1192,7 @@
 
             <div class="goal-numbers">
 
-                <strong id="goalPercent">
-                    0%
-                </strong>
+                <strong id="goalPercent">0%</strong>
 
                 <span id="goalText">
                     $0 of $500 saved
@@ -861,9 +1201,7 @@
             </div>
 
             <div class="goal-bar">
-
                 <i id="goalProgress"></i>
-
             </div>
 
         </div>
@@ -873,26 +1211,16 @@
 </section>
 
 
-<!-- ================= TIPS ================= -->
-
-<section
-    id="tips"
-    class="section">
+<section id="tips" class="section">
 
     <div class="section-header">
 
         <div>
-
-            <span class="section-label">
-                LEARN
-            </span>
+            <span class="section-label">LEARN</span>
 
             <h2>💡 Smart Money Tips</h2>
 
-            <p>
-                A few things worth knowing before getting started.
-            </p>
-
+            <p>Things worth knowing before getting started.</p>
         </div>
 
     </div>
@@ -903,37 +1231,25 @@
         <div class="tip-card">
             <div class="tip-icon">🎯</div>
             <h3>Set a Goal</h3>
-            <p>
-                Decide what you're saving for and keep track
-                of your progress.
-            </p>
+            <p>Decide what you're saving for and track your progress.</p>
         </div>
 
         <div class="tip-card">
             <div class="tip-icon">📚</div>
             <h3>Build Skills</h3>
-            <p>
-                Skills can become more valuable as you
-                gain experience.
-            </p>
+            <p>Skills can become more valuable as you gain experience.</p>
         </div>
 
         <div class="tip-card">
             <div class="tip-icon">🛡️</div>
             <h3>Stay Safe</h3>
-            <p>
-                Don't share passwords, private information
-                or your home address with strangers online.
-            </p>
+            <p>Don't share passwords or unnecessary personal information.</p>
         </div>
 
         <div class="tip-card">
             <div class="tip-icon">⚠️</div>
             <h3>Watch for Scams</h3>
-            <p>
-                Be suspicious of offers promising huge
-                amounts of money for almost no work.
-            </p>
+            <p>Be careful with offers promising huge amounts of money.</p>
         </div>
 
     </div>
@@ -941,21 +1257,15 @@
 </section>
 
 
-<!-- ================= SAFETY ================= -->
-
 <section class="section">
 
     <div class="safety-card">
 
-        <div class="safety-icon">
-            🛡️
-        </div>
+        <div class="safety-icon">🛡️</div>
 
         <div>
 
-            <span class="section-label">
-                IMPORTANT
-            </span>
+            <span class="section-label">IMPORTANT</span>
 
             <h2>Stay Safe</h2>
 
@@ -975,19 +1285,11 @@
 </main>
 
 
-<!-- ================= DETAILS MODAL ================= -->
-
-<div
-    id="detailsModal"
-    class="modal">
+<div id="detailsModal" class="modal">
 
     <div class="modal-content">
 
-        <button
-            id="closeDetails"
-            class="close-modal">
-            ✕
-        </button>
+        <button id="closeDetails" class="close-modal">✕</button>
 
         <div id="detailsContent"></div>
 
@@ -996,59 +1298,29 @@
 </div>
 
 
-<!-- ================= QUIZ MODAL ================= -->
-
-<div
-    id="quizModal"
-    class="modal">
+<div id="quizModal" class="modal">
 
     <div class="modal-content quiz-content">
 
-        <button
-            id="closeQuiz"
-            class="close-modal">
-            ✕
-        </button>
+        <button id="closeQuiz" class="close-modal">✕</button>
 
-        <span class="section-label">
-            PERSONAL QUIZ
-        </span>
+        <span class="section-label">PERSONAL QUIZ</span>
 
         <h2>🎯 Find Your Best Option</h2>
 
-        <p>
-            Answer a few questions and we'll recommend
-            three ideas.
-        </p>
+        <p>Answer a few questions and we'll recommend three ideas.</p>
 
 
         <label>What interests you?</label>
 
         <select id="quizInterest">
 
-            <option value="animals">
-                🐶 Animals
-            </option>
-
-            <option value="outdoor">
-                🌳 Outdoor work
-            </option>
-
-            <option value="creative">
-                🎨 Creative work
-            </option>
-
-            <option value="technology">
-                💻 Technology
-            </option>
-
-            <option value="gaming">
-                🎮 Gaming
-            </option>
-
-            <option value="people">
-                🤝 Helping people
-            </option>
+            <option value="animals">🐶 Animals</option>
+            <option value="outdoor">🌳 Outdoor work</option>
+            <option value="creative">🎨 Creative work</option>
+            <option value="technology">💻 Technology</option>
+            <option value="gaming">🎮 Gaming</option>
+            <option value="people">🤝 Helping people</option>
 
         </select>
 
@@ -1057,17 +1329,9 @@
 
         <select id="quizLocation">
 
-            <option value="outside">
-                🏡 Around your area
-            </option>
-
-            <option value="online">
-                💻 Online
-            </option>
-
-            <option value="both">
-                🔄 Either
-            </option>
+            <option value="outside">🏡 Around your area</option>
+            <option value="online">💻 Online</option>
+            <option value="both">🔄 Either</option>
 
         </select>
 
@@ -1076,17 +1340,9 @@
 
         <select id="quizTime">
 
-            <option value="little">
-                ⏱️ Less than 1 hour
-            </option>
-
-            <option value="medium">
-                🕐 1–3 hours
-            </option>
-
-            <option value="lots">
-                🕐 3+ hours
-            </option>
+            <option value="little">⏱️ Less than 1 hour</option>
+            <option value="medium">🕐 1–3 hours</option>
+            <option value="lots">🕐 3+ hours</option>
 
         </select>
 
@@ -1095,24 +1351,14 @@
 
         <select id="quizGoal">
 
-            <option value="quick">
-                💵 Quick/simple earnings
-            </option>
-
-            <option value="skill">
-                📚 Building a skill
-            </option>
-
-            <option value="long">
-                🚀 Building something long-term
-            </option>
+            <option value="quick">💵 Quick/simple earnings</option>
+            <option value="skill">📚 Building a skill</option>
+            <option value="long">🚀 Long-term project</option>
 
         </select>
 
 
-        <button
-            id="quizSubmit"
-            class="primary-button full">
+        <button id="quizSubmit" class="primary-button full">
             Show My Results 🚀
         </button>
 
@@ -1124,30 +1370,16 @@
 </div>
 
 
-<!-- ================= BACK TO TOP ================= -->
+<button id="backTop" class="back-top">↑</button>
 
-<button
-    id="backTop"
-    class="back-top">
-    ↑
-</button>
-
-
-<!-- ================= FOOTER ================= -->
 
 <footer>
 
-    <div class="footer-logo">
-        💰 Teen Money
-    </div>
+    <div class="footer-logo">💰 Teen Money</div>
 
-    <p>
-        Learn. Earn. Grow.
-    </p>
+    <p>Learn. Earn. Grow.</p>
 
-    <small>
-        © 2026 Teen Money
-    </small>
+    <small>© 2026 Teen Money</small>
 
 </footer>
 
