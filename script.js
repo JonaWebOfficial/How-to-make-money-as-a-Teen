@@ -1,474 +1,419 @@
 /* =========================================
-   TEEN MONEY
-   COMPLETE JAVASCRIPT
-========================================= */
+   TEEN MONEY WEBSITE
+   ========================================= */
 
 
-/* =========================================
-   20 MONEY IDEAS
-========================================= */
-
-const moneyIdeas = [
+const jobs = [
 
     {
         name: "Dog Walking",
-        icon: "🐕",
+        icon: "🐶",
         category: "local",
-        difficulty: 2,
-        time: 40,
-        timeText: "30–45 min",
-        earnings: 15,
-        earningsText: "10–20 kr+",
-        description:
-            "Walk dogs for people you know or trusted neighbors.",
-        details:
-            "Dog walking can be a simple way to earn money while getting some exercise. Start with people your family knows and agree on the price beforehand."
-    },
-
-    {
-        name: "Grocery Help",
-        icon: "🛒",
-        category: "local",
-        difficulty: 2,
-        time: 30,
-        timeText: "Around 30 min",
-        earnings: 20,
-        earningsText: "10–30 kr+",
-        description:
-            "Help someone with simple grocery tasks.",
-        details:
-            "You could help carry, organize or put away groceries for people you know. Agree on the task and payment beforehand."
+        description: "Walk dogs for people in your neighborhood.",
+        min: 10,
+        max: 20,
+        unit: "walk",
+        time: "30–45 minutes",
+        difficulty: 2
     },
 
     {
         name: "Car Washing",
         icon: "🚗",
         category: "local",
-        difficulty: 3,
-        time: 60,
-        timeText: "Around 1 hour",
-        earnings: 40,
-        earningsText: "25–60 kr+",
-        description:
-            "Wash cars for people you know.",
-        details:
-            "Offer basic car washing to family, friends or trusted neighbors. Always ask before using their equipment."
+        description: "Wash cars for neighbors, friends or family.",
+        min: 15,
+        max: 30,
+        unit: "car",
+        time: "1–2 hours",
+        difficulty: 3
+    },
+
+    {
+        name: "Grocery Help",
+        icon: "🛒",
+        category: "local",
+        description: "Help people carry groceries or organize them.",
+        min: 10,
+        max: 20,
+        unit: "job",
+        time: "30 minutes",
+        difficulty: 2
     },
 
     {
         name: "Lawn Mowing",
         icon: "🌱",
         category: "local",
-        difficulty: 3,
-        time: 60,
-        timeText: "Around 1 hour",
-        earnings: 50,
-        earningsText: "30–80 kr+",
-        description:
-            "Help people with basic garden work.",
-        details:
-            "You can offer simple garden jobs to people you know. Only use equipment you are allowed and able to use safely."
+        description: "Mow lawns for people in your neighborhood.",
+        min: 20,
+        max: 50,
+        unit: "lawn",
+        time: "30–90 minutes",
+        difficulty: 3
     },
 
     {
         name: "Babysitting",
         icon: "👶",
         category: "local",
-        difficulty: 6,
-        time: 120,
-        timeText: "2+ hours",
-        earnings: 80,
-        earningsText: "50–150 kr+",
-        description:
-            "Help trusted families look after children.",
-        details:
-            "Babysitting is a responsibility. Start with families your parents or guardians know and make sure everyone agrees on the arrangements."
+        description: "Look after children for families you know.",
+        min: 10,
+        max: 20,
+        unit: "hour",
+        time: "1–4 hours",
+        difficulty: 5
     },
 
     {
-        name: "Tutoring",
-        icon: "📚",
-        category: "skills",
-        difficulty: 5,
-        time: 60,
-        timeText: "Around 1 hour",
-        earnings: 60,
-        earningsText: "40–100 kr+",
-        description:
-            "Help younger students with subjects you know.",
-        details:
-            "If you are good at a school subject, you could help younger students understand it."
+        name: "House Cleaning",
+        icon: "🧹",
+        category: "local",
+        description: "Help clean houses, rooms or garages.",
+        min: 15,
+        max: 40,
+        unit: "job",
+        time: "1–3 hours",
+        difficulty: 4
+    },
+
+    {
+        name: "Car Detailing",
+        icon: "✨",
+        category: "local",
+        description: "Clean the inside and outside of cars.",
+        min: 30,
+        max: 80,
+        unit: "car",
+        time: "2–4 hours",
+        difficulty: 5
+    },
+
+    {
+        name: "Pet Sitting",
+        icon: "🐱",
+        category: "local",
+        description: "Look after pets while their owners are away.",
+        min: 15,
+        max: 40,
+        unit: "job",
+        time: "1–3 hours",
+        difficulty: 4
     },
 
     {
         name: "Video Editing",
-        icon: "🎬",
+        icon: "💻",
         category: "creative",
-        difficulty: 6,
-        time: 120,
-        timeText: "1–3 hours",
-        earnings: 100,
-        earningsText: "50–300 kr+",
-        description:
-            "Edit videos, Shorts and social media clips.",
-        details:
-            "Learn an editing program and make example projects. A portfolio can help demonstrate what you can do."
+        description: "Edit videos for YouTubers, creators or small businesses.",
+        min: 20,
+        max: 100,
+        unit: "video",
+        time: "1–5 hours",
+        difficulty: 6
     },
 
     {
-        name: "Graphic Design",
+        name: "Thumbnail Design",
         icon: "🎨",
         category: "creative",
-        difficulty: 6,
-        time: 120,
-        timeText: "1–3 hours",
-        earnings: 100,
-        earningsText: "50–300 kr+",
-        description:
-            "Create thumbnails, posters and graphics.",
-        details:
-            "Practice making thumbnails, posters and simple graphics. Build examples before offering your work."
+        description: "Create thumbnails for YouTube videos.",
+        min: 10,
+        max: 50,
+        unit: "thumbnail",
+        time: "30–90 minutes",
+        difficulty: 5
     },
 
     {
-        name: "Content Creation",
+        name: "Social Media Editing",
         icon: "📱",
-        category: "online",
-        difficulty: 7,
-        time: 180,
-        timeText: "2–4 hours",
-        earnings: 20,
-        earningsText: "Varies",
-        description:
-            "Create videos around something you enjoy.",
-        details:
-            "You can build a channel around gaming, football, art, education or another interest. Earnings are not guaranteed and usually take time."
+        category: "creative",
+        description: "Create short videos and posts for social media.",
+        min: 20,
+        max: 100,
+        unit: "project",
+        time: "1–4 hours",
+        difficulty: 6
     },
 
     {
         name: "Photography",
         icon: "📸",
         category: "creative",
-        difficulty: 5,
-        time: 90,
-        timeText: "1–2 hours",
-        earnings: 80,
-        earningsText: "40–200 kr+",
-        description:
-            "Take photos for projects or events.",
-        details:
-            "Practice photography and create a small portfolio. Always get permission before photographing people."
+        description: "Take photos for local events or small projects.",
+        min: 25,
+        max: 100,
+        unit: "project",
+        time: "1–3 hours",
+        difficulty: 6
     },
 
     {
-        name: "Pet Sitting",
-        icon: "🐈",
-        category: "local",
-        difficulty: 3,
-        time: 60,
-        timeText: "Around 1 hour",
-        earnings: 50,
-        earningsText: "30–100 kr+",
-        description:
-            "Help trusted people look after their pets.",
-        details:
-            "Pet sitting can involve feeding, checking on or spending time with pets while their owners are away."
+        name: "YouTube Channel",
+        icon: "▶️",
+        category: "online",
+        description: "Create videos around topics you enjoy.",
+        min: 0,
+        max: 500,
+        unit: "month",
+        time: "Many hours",
+        difficulty: 9
     },
 
     {
-        name: "Cleaning Help",
-        icon: "🧹",
-        category: "local",
-        difficulty: 3,
-        time: 60,
-        timeText: "Around 1 hour",
-        earnings: 50,
-        earningsText: "30–100 kr+",
-        description:
-            "Help with simple household cleaning.",
-        details:
-            "Offer basic cleaning help to people you know. Agree on exactly what you will do before starting."
+        name: "Making Roblox Games",
+        icon: "🎮",
+        category: "online",
+        description: "Create Roblox games and learn game development.",
+        min: 20,
+        max: 1000,
+        unit: "project",
+        time: "Many hours",
+        difficulty: 8
     },
 
     {
-        name: "Tech Help",
-        icon: "💻",
-        category: "skills",
-        difficulty: 5,
-        time: 60,
-        timeText: "Around 1 hour",
-        earnings: 70,
-        earningsText: "40–150 kr+",
-        description:
-            "Help people with basic technology.",
-        details:
-            "If you understand computers or phones well, you can help with simple tasks such as settings or basic software."
+        name: "Graphic Design",
+        icon: "🖌️",
+        category: "creative",
+        description: "Create logos, banners and graphics.",
+        min: 15,
+        max: 100,
+        unit: "project",
+        time: "1–5 hours",
+        difficulty: 6
     },
 
     {
         name: "Website Design",
         icon: "🌐",
         category: "online",
-        difficulty: 8,
-        time: 240,
-        timeText: "3–6 hours",
-        earnings: 200,
-        earningsText: "100–500 kr+",
-        description:
-            "Build simple websites.",
-        details:
-            "Learn HTML, CSS and JavaScript and practice by creating your own websites."
+        description: "Build simple websites for people or small businesses.",
+        min: 30,
+        max: 300,
+        unit: "website",
+        time: "3–10 hours",
+        difficulty: 7
     },
 
     {
-        name: "Social Media Help",
-        icon: "📲",
-        category: "online",
-        difficulty: 6,
-        time: 120,
-        timeText: "1–3 hours",
-        earnings: 120,
-        earningsText: "50–300 kr+",
-        description:
-            "Help a small business with social media content.",
-        details:
-            "Learn how social media works and practice creating posts, captions or simple graphics."
+        name: "Tutoring",
+        icon: "📚",
+        category: "local",
+        description: "Help younger students with subjects you know well.",
+        min: 10,
+        max: 25,
+        unit: "hour",
+        time: "1 hour",
+        difficulty: 5
     },
 
     {
-        name: "Sell Crafts",
-        icon: "🧶",
-        category: "creative",
-        difficulty: 5,
-        time: 120,
-        timeText: "1–3 hours",
-        earnings: 60,
-        earningsText: "Varies",
-        description:
-            "Create and sell handmade items with adult help.",
-        details:
-            "Make something you enjoy and explore selling it with a parent or guardian helping with accounts and payments."
-    },
-
-    {
-        name: "Carrying Help",
+        name: "Reselling",
         icon: "📦",
+        category: "business",
+        description: "Sell items you own or items you can legally resell.",
+        min: 10,
+        max: 200,
+        unit: "sale",
+        time: "1–3 hours",
+        difficulty: 7
+    },
+
+    {
+        name: "Digital Products",
+        icon: "📁",
+        category: "business",
+        description: "Create useful digital templates or designs.",
+        min: 5,
+        max: 100,
+        unit: "sale",
+        time: "1–5 hours",
+        difficulty: 7
+    },
+
+    {
+        name: "Tech Help",
+        icon: "🖥️",
         category: "local",
-        difficulty: 2,
-        time: 30,
-        timeText: "Around 30 min",
-        earnings: 30,
-        earningsText: "15–50 kr+",
-        description:
-            "Help trusted people with light carrying jobs.",
-        details:
-            "Offer help with light items. Do not attempt to carry anything too heavy or dangerous."
-    },
-
-    {
-        name: "Sell Old Items",
-        icon: "♻️",
-        category: "local",
-        difficulty: 3,
-        time: 60,
-        timeText: "Around 1 hour",
-        earnings: 80,
-        earningsText: "Varies",
-        description:
-            "Sell things you no longer need with adult help.",
-        details:
-            "Look through your old belongings and ask a parent or guardian about selling things you no longer use."
-    },
-
-    {
-        name: "Art Commissions",
-        icon: "🖌️",
-        category: "creative",
-        difficulty: 6,
-        time: 120,
-        timeText: "1–3 hours",
-        earnings: 80,
-        earningsText: "20–300 kr+",
-        description:
-            "Create drawings or digital artwork.",
-        details:
-            "Practice your art and build a portfolio of examples before offering custom artwork."
-    },
-
-    {
-        name: "Coding",
-        icon: "👨‍💻",
-        category: "skills",
-        difficulty: 9,
-        time: 240,
-        timeText: "3–6 hours",
-        earnings: 200,
-        earningsText: "Varies",
-        description:
-            "Learn programming and build useful projects.",
-        details:
-            "HTML, CSS, JavaScript and other programming skills can help you create websites, games and tools."
+        description: "Help family or neighbors with basic technology.",
+        min: 10,
+        max: 30,
+        unit: "job",
+        time: "30–90 minutes",
+        difficulty: 4
     }
 
 ];
 
 
 /* =========================================
-   START
-========================================= */
+   ELEMENTS
+   ========================================= */
 
-document.addEventListener("DOMContentLoaded", () => {
+const jobsContainer = document.getElementById("jobsContainer");
+const searchInput = document.getElementById("searchInput");
+const categoryFilter = document.getElementById("categoryFilter");
+const sortSelect = document.getElementById("sortSelect");
+const noResults = document.getElementById("noResults");
+const jobCount = document.getElementById("jobCount");
 
-    renderIdeas();
+const plannerJob = document.getElementById("plannerJob");
+const jobsPerWeek = document.getElementById("jobsPerWeek");
+const weeksPerMonth = document.getElementById("weeksPerMonth");
+const calculateBtn = document.getElementById("calculateBtn");
+const plannerResult = document.getElementById("plannerResult");
 
-    setupFilters();
-
-    setupFavorites();
-
-    setupModal();
-
-    setupRandomIdea();
-
-    setupPlanner();
-
-    setupCalculator();
-
-    setupSavingsGoal();
-
-    setupQuiz();
-
-    setupDarkMode();
-
-    setupXP();
-
-});
+const darkModeBtn = document.getElementById("darkModeBtn");
+const clearSearch = document.getElementById("clearSearch");
 
 
 /* =========================================
-   ELEMENT HELPERS
-========================================= */
+   DIFFICULTY
+   ========================================= */
 
-function get(id) {
-    return document.getElementById(id);
+function getDifficultyClass(difficulty) {
+
+    if (difficulty <= 3) {
+        return "easy";
+    }
+
+    if (difficulty <= 6) {
+        return "medium";
+    }
+
+    if (difficulty <= 8) {
+        return "hard";
+    }
+
+    return "very-hard";
+}
+
+
+function getDifficultyLabel(difficulty) {
+
+    if (difficulty <= 2) {
+        return "Very Easy";
+    }
+
+    if (difficulty <= 4) {
+        return "Easy";
+    }
+
+    if (difficulty <= 6) {
+        return "Medium";
+    }
+
+    if (difficulty <= 8) {
+        return "Hard";
+    }
+
+    return "Very Hard";
 }
 
 
 /* =========================================
-   RENDER IDEAS
-========================================= */
+   DISPLAY JOBS
+   ========================================= */
 
-function renderIdeas() {
+function displayJobs(list) {
 
-    const grid = get("ideasGrid");
+    jobsContainer.innerHTML = "";
 
-    grid.innerHTML = "";
+    jobCount.textContent =
+        `${list.length} ${list.length === 1 ? "opportunity" : "opportunities"} found`;
 
-    moneyIdeas.forEach((idea, index) => {
+    if (list.length === 0) {
+
+        noResults.style.display = "block";
+
+        return;
+    }
+
+    noResults.style.display = "none";
+
+
+    list.forEach(job => {
+
+        const difficultyClass =
+            getDifficultyClass(job.difficulty);
+
+        const difficultyLabel =
+            getDifficultyLabel(job.difficulty);
+
 
         const card = document.createElement("article");
 
-        card.className = "idea-card";
+        card.className = "job-card";
 
-        card.dataset.index = index;
 
         card.innerHTML = `
 
-            <div class="idea-icon">
-                ${idea.icon}
+            <div class="job-icon">
+                ${job.icon}
             </div>
 
-            <div class="idea-top">
 
-                <span class="category">
-                    ${idea.category.toUpperCase()}
-                </span>
+            <div class="job-info">
 
-                <button
-                    class="favorite"
-                    data-index="${index}"
-                    type="button"
-                    aria-label="Favorite ${idea.name}"
-                >
-                    ☆
-                </button>
+                <h3>${job.name}</h3>
+
+                <p>${job.description}</p>
 
             </div>
 
-            <h3>
-                ${idea.name}
-            </h3>
 
-            <p>
-                ${idea.description}
-            </p>
+            <div class="job-meta">
 
-            <div class="idea-info">
+                <strong>💵 $${job.min}–$${job.max}</strong>
 
-                <span>
-                    ⭐ Difficulty ${idea.difficulty}/10
-                </span>
+                <span>per ${job.unit}</span>
 
-                <span>
-                    ⏱️ ${idea.timeText}
-                </span>
+            </div>
 
-                <span>
-                    💵 ${idea.earningsText}
+
+            <div class="job-meta">
+
+                <strong>⏱️ Time</strong>
+
+                <span>${job.time}</span>
+
+            </div>
+
+
+            <div class="difficulty ${difficultyClass}">
+
+                <div class="difficulty-title">
+                    Difficulty
+                </div>
+
+                <div>
+                    <span class="difficulty-number">
+                        ${job.difficulty}
+                    </span>
+                    <span>/10</span>
+                </div>
+
+                <div class="difficulty-bar">
+
+                    <div
+                        class="difficulty-fill"
+                        style="width:${job.difficulty * 10}%"
+                    ></div>
+
+                </div>
+
+                <span class="difficulty-label">
+                    ${difficultyLabel}
                 </span>
 
             </div>
 
-            <button
-                class="learn-more"
-                data-index="${index}"
-                type="button"
-            >
-                Learn More →
-            </button>
         `;
 
-        grid.appendChild(card);
-    });
 
-    get("ideaCount").textContent = moneyIdeas.length;
-
-    updateFavoriteButtons();
-
-    setupCardButtons();
-}
-
-
-/* =========================================
-   CARD BUTTONS
-========================================= */
-
-function setupCardButtons() {
-
-    document.querySelectorAll(".learn-more").forEach(button => {
-
-        button.addEventListener("click", () => {
-
-            const idea =
-                moneyIdeas[Number(button.dataset.index)];
-
-            openModal(idea);
-
-            addXP(5);
-        });
-
-    });
-
-
-    document.querySelectorAll(".favorite").forEach(button => {
-
-        button.addEventListener("click", () => {
-
-            const index =
-                Number(button.dataset.index);
-
-            toggleFavorite(index);
-
-        });
+        jobsContainer.appendChild(card);
 
     });
 
@@ -476,899 +421,266 @@ function setupCardButtons() {
 
 
 /* =========================================
-   FAVORITES
-========================================= */
+   FILTER + SEARCH + SORT
+   ========================================= */
 
-function getFavorites() {
-
-    try {
-
-        return JSON.parse(
-            localStorage.getItem("teenMoneyFavorites")
-        ) || [];
-
-    } catch {
-
-        return [];
-
-    }
-}
-
-
-function saveFavorites(favorites) {
-
-    localStorage.setItem(
-        "teenMoneyFavorites",
-        JSON.stringify(favorites)
-    );
-}
-
-
-function toggleFavorite(index) {
-
-    const favorites = getFavorites();
-
-    if (favorites.includes(index)) {
-
-        const position =
-            favorites.indexOf(index);
-
-        favorites.splice(position, 1);
-
-    } else {
-
-        favorites.push(index);
-
-        addXP(10);
-    }
-
-    saveFavorites(favorites);
-
-    updateFavoriteButtons();
-}
-
-
-function updateFavoriteButtons() {
-
-    const favorites = getFavorites();
-
-    document.querySelectorAll(".favorite").forEach(button => {
-
-        const index =
-            Number(button.dataset.index);
-
-        if (favorites.includes(index)) {
-
-            button.textContent = "★";
-            button.classList.add("active");
-
-        } else {
-
-            button.textContent = "☆";
-            button.classList.remove("active");
-
-        }
-
-    });
-}
-
-
-function setupFavorites() {
-    updateFavoriteButtons();
-}
-
-
-/* =========================================
-   FILTERS
-========================================= */
-
-function setupFilters() {
-
-    get("searchInput")
-        .addEventListener("input", filterIdeas);
-
-    get("categoryFilter")
-        .addEventListener("change", filterIdeas);
-
-    get("difficultyFilter")
-        .addEventListener("change", filterIdeas);
-
-    get("sortSelect")
-        .addEventListener("change", filterIdeas);
-
-    get("clearFilters")
-        .addEventListener("click", () => {
-
-            get("searchInput").value = "";
-            get("categoryFilter").value = "all";
-            get("difficultyFilter").value = "all";
-            get("sortSelect").value = "default";
-
-            filterIdeas();
-        });
-}
-
-
-function filterIdeas() {
+function updateJobs() {
 
     const search =
-        get("searchInput")
-            .value
-            .toLowerCase()
-            .trim();
+        searchInput.value.toLowerCase().trim();
 
     const category =
-        get("categoryFilter").value;
+        categoryFilter.value;
 
-    const difficulty =
-        get("difficultyFilter").value;
+    let filtered = jobs.filter(job => {
 
-    const sort =
-        get("sortSelect").value;
+        const matchesSearch =
+            job.name.toLowerCase().includes(search) ||
+            job.description.toLowerCase().includes(search);
 
-
-    let results = moneyIdeas.filter(idea => {
-
-        const searchable =
-            `${idea.name} ${idea.description} ${idea.category}`
-                .toLowerCase();
-
-        const searchMatch =
-            searchable.includes(search);
-
-        const categoryMatch =
+        const matchesCategory =
             category === "all" ||
-            idea.category === category;
+            job.category === category;
 
-        const difficultyMatch =
-            difficulty === "all" ||
-            idea.difficulty === Number(difficulty);
+        return matchesSearch && matchesCategory;
 
-        return (
-            searchMatch &&
-            categoryMatch &&
-            difficultyMatch
-        );
     });
 
 
-    /* SORT */
+    const sort = sortSelect.value;
+
 
     if (sort === "difficulty-low") {
 
-        results.sort(
-            (a, b) =>
-                a.difficulty - b.difficulty
+        filtered.sort(
+            (a, b) => a.difficulty - b.difficulty
         );
 
     }
+
 
     if (sort === "difficulty-high") {
 
-        results.sort(
-            (a, b) =>
-                b.difficulty - a.difficulty
-        );
-
-    }
-
-    if (sort === "time-low") {
-
-        results.sort(
-            (a, b) =>
-                a.time - b.time
-        );
-
-    }
-
-    if (sort === "time-high") {
-
-        results.sort(
-            (a, b) =>
-                b.time - a.time
-        );
-
-    }
-
-    if (sort === "earnings-low") {
-
-        results.sort(
-            (a, b) =>
-                a.earnings - b.earnings
-        );
-
-    }
-
-    if (sort === "earnings-high") {
-
-        results.sort(
-            (a, b) =>
-                b.earnings - a.earnings
+        filtered.sort(
+            (a, b) => b.difficulty - a.difficulty
         );
 
     }
 
 
-    const grid = get("ideasGrid");
+    if (sort === "earn-low") {
 
-    grid.innerHTML = "";
+        filtered.sort(
+            (a, b) => a.min - b.min
+        );
 
-    results.forEach(idea => {
-
-        const originalIndex =
-            moneyIdeas.indexOf(idea);
-
-        const card =
-            createIdeaCard(
-                idea,
-                originalIndex
-            );
-
-        grid.appendChild(card);
-    });
+    }
 
 
-    get("resultsText").textContent =
-        `Showing ${results.length} of ${moneyIdeas.length} ideas`;
+    if (sort === "earn-high") {
+
+        filtered.sort(
+            (a, b) => b.max - a.max
+        );
+
+    }
 
 
-    get("noResults").style.display =
-        results.length === 0
-            ? "block"
-            : "none";
+    displayJobs(filtered);
 
-
-    setupCardButtons();
-
-    updateFavoriteButtons();
 }
 
 
 /* =========================================
-   CREATE CARD
-========================================= */
+   SEARCH EVENTS
+   ========================================= */
 
-function createIdeaCard(idea, index) {
-
-    const card =
-        document.createElement("article");
-
-    card.className = "idea-card";
-
-    card.innerHTML = `
-
-        <div class="idea-icon">
-            ${idea.icon}
-        </div>
-
-        <div class="idea-top">
-
-            <span class="category">
-                ${idea.category.toUpperCase()}
-            </span>
-
-            <button
-                class="favorite"
-                data-index="${index}"
-                type="button"
-            >
-                ☆
-            </button>
-
-        </div>
-
-        <h3>
-            ${idea.name}
-        </h3>
-
-        <p>
-            ${idea.description}
-        </p>
-
-        <div class="idea-info">
-
-            <span>
-                ⭐ Difficulty ${idea.difficulty}/10
-            </span>
-
-            <span>
-                ⏱️ ${idea.timeText}
-            </span>
-
-            <span>
-                💵 ${idea.earningsText}
-            </span>
-
-        </div>
-
-        <button
-            class="learn-more"
-            data-index="${index}"
-            type="button"
-        >
-            Learn More →
-        </button>
-    `;
-
-    return card;
-}
+searchInput.addEventListener(
+    "input",
+    updateJobs
+);
 
 
-/* =========================================
-   MODAL
-========================================= */
-
-function setupModal() {
-
-    get("closeModal")
-        .addEventListener(
-            "click",
-            closeModal
-        );
-
-    get("modalDone")
-        .addEventListener(
-            "click",
-            closeModal
-        );
-
-    get("modal")
-        .addEventListener("click", event => {
-
-            if (
-                event.target ===
-                get("modal")
-            ) {
-                closeModal();
-            }
-
-        });
-
-    document.addEventListener(
-        "keydown",
-        event => {
-
-            if (event.key === "Escape") {
-                closeModal();
-            }
-
-        }
-    );
-}
+categoryFilter.addEventListener(
+    "change",
+    updateJobs
+);
 
 
-function openModal(idea) {
-
-    get("modalIcon").textContent =
-        idea.icon;
-
-    get("modalTitle").textContent =
-        idea.name;
-
-    get("modalDescription").textContent =
-        idea.details;
-
-    get("modalDifficulty").textContent =
-        `⭐ Difficulty ${idea.difficulty}/10`;
-
-    get("modalTime").textContent =
-        `⏱️ ${idea.timeText}`;
-
-    get("modalEarnings").textContent =
-        `💵 ${idea.earningsText}`;
-
-    get("modal").classList.add("show");
-}
+sortSelect.addEventListener(
+    "change",
+    updateJobs
+);
 
 
-function closeModal() {
+clearSearch.addEventListener(
+    "click",
+    () => {
 
-    get("modal").classList.remove("show");
-}
+        searchInput.value = "";
 
+        updateJobs();
 
-/* =========================================
-   RANDOM IDEA
-========================================= */
+        searchInput.focus();
 
-function setupRandomIdea() {
-
-    get("randomBtn")
-        .addEventListener("click", () => {
-
-            const index =
-                Math.floor(
-                    Math.random() *
-                    moneyIdeas.length
-                );
-
-            const idea =
-                moneyIdeas[index];
-
-            openModal(idea);
-
-            addXP(5);
-        });
-}
+    }
+);
 
 
 /* =========================================
    MONEY PLANNER
-========================================= */
+   ========================================= */
 
 function setupPlanner() {
 
-    const goal =
-        get("plannerGoal");
+    plannerJob.innerHTML = "";
 
-    const weekly =
-        get("plannerWeekly");
+    jobs.forEach((job, index) => {
 
-    goal.addEventListener(
-        "input",
-        updatePlanner
-    );
+        const option =
+            document.createElement("option");
 
-    weekly.addEventListener(
-        "input",
-        updatePlanner
-    );
+        option.value = index;
 
-    updatePlanner();
+        option.textContent =
+            `${job.icon} ${job.name} ($${job.min}–$${job.max})`;
+
+        plannerJob.appendChild(option);
+
+    });
+
 }
 
 
-function updatePlanner() {
+function calculateMoney() {
 
-    const goal =
-        Number(get("plannerGoal").value);
+    const index =
+        Number(plannerJob.value);
 
-    const weekly =
-        Number(get("plannerWeekly").value);
+    const weeklyJobs =
+        Number(jobsPerWeek.value);
+
+    const monthlyWeeks =
+        Number(weeksPerMonth.value);
 
 
-    if (
-        !Number.isFinite(goal) ||
-        !Number.isFinite(weekly) ||
-        goal <= 0 ||
-        weekly <= 0
-    ) {
+    const job = jobs[index];
 
-        get("plannerWeeks").textContent =
-            "Enter valid amounts";
 
-        get("plannerExplanation").textContent =
-            "Enter a savings goal and weekly earnings.";
+    if (!job || weeklyJobs < 0 || monthlyWeeks < 1) {
+
+        plannerResult.innerHTML = `
+            <span>Please enter valid numbers.</span>
+        `;
 
         return;
     }
 
 
-    const weeks =
-        Math.ceil(goal / weekly);
+    /*
+       Use the middle of the estimated
+       earning range for the calculation.
+    */
 
+    const average =
+        (job.min + job.max) / 2;
 
-    get("plannerWeeks").textContent =
-        `${weeks} week${weeks === 1 ? "" : "s"}`;
-
-
-    get("plannerExplanation").textContent =
-        `At ${formatMoney(weekly)} per week, a ${formatMoney(goal)} goal would take about ${weeks} week${weeks === 1 ? "" : "s"}.`;
-
-}
-
-
-/* =========================================
-   CALCULATOR
-========================================= */
-
-function setupCalculator() {
-
-    get("calcAmount")
-        .addEventListener(
-            "input",
-            updateCalculator
-        );
-
-    get("calcJobs")
-        .addEventListener(
-            "input",
-            updateCalculator
-        );
-
-    updateCalculator();
-}
-
-
-function updateCalculator() {
-
-    const amount =
-        Number(get("calcAmount").value) || 0;
-
-    const jobs =
-        Number(get("calcJobs").value) || 0;
-
-    const weekly =
-        amount * jobs;
 
     const monthly =
-        weekly * 4;
+        average *
+        weeklyJobs *
+        monthlyWeeks;
 
 
-    get("weeklyResult").textContent =
-        formatMoney(weekly);
+    plannerResult.innerHTML = `
 
+        <span>
+            Estimated monthly earnings from
+            ${job.name}
+        </span>
 
-    get("monthlyResult").textContent =
-        `About ${formatMoney(monthly)} per month`;
-}
+        <strong>
+            $${Math.round(monthly).toLocaleString()}
+        </strong>
 
-
-/* =========================================
-   SAVINGS GOAL
-========================================= */
-
-function setupSavingsGoal() {
-
-    const savedGoal =
-        localStorage.getItem(
-            "teenMoneyGoal"
-        );
-
-    const savedMoney =
-        localStorage.getItem(
-            "teenMoneySaved"
-        );
-
-
-    if (savedGoal !== null) {
-        get("goalAmount").value =
-            savedGoal;
-    }
-
-    if (savedMoney !== null) {
-        get("savedAmount").value =
-            savedMoney;
-    }
-
-
-    get("goalAmount")
-        .addEventListener(
-            "input",
-            updateSavingsGoal
-        );
-
-    get("savedAmount")
-        .addEventListener(
-            "input",
-            updateSavingsGoal
-        );
-
-
-    updateSavingsGoal();
-}
-
-
-function updateSavingsGoal() {
-
-    const goal =
-        Number(get("goalAmount").value) || 0;
-
-    const saved =
-        Number(get("savedAmount").value) || 0;
-
-
-    if (goal <= 0) {
-
-        get("goalProgressBar")
-            .style.width = "0%";
-
-        get("goalText").textContent =
-            "0 kr saved";
-
-        get("goalPercent").textContent =
-            "0%";
-
-        return;
-    }
-
-
-    const percentage =
-        Math.min(
-            Math.max(
-                (saved / goal) * 100,
-                0
-            ),
-            100
-        );
-
-
-    get("goalProgressBar")
-        .style.width =
-        `${percentage}%`;
-
-
-    get("goalText").textContent =
-        `${formatMoney(saved)} saved`;
-
-
-    get("goalPercent").textContent =
-        `${Math.round(percentage)}%`;
-
-
-    localStorage.setItem(
-        "teenMoneyGoal",
-        goal
-    );
-
-    localStorage.setItem(
-        "teenMoneySaved",
-        saved
-    );
-}
-
-
-/* =========================================
-   QUIZ
-========================================= */
-
-let quizCategory = null;
-let quizDifficulty = null;
-
-
-function setupQuiz() {
-
-    document
-        .querySelectorAll(
-            "#categoryOptions button"
-        )
-        .forEach(button => {
-
-            button.addEventListener(
-                "click",
-                () => {
-
-                    document
-                        .querySelectorAll(
-                            "#categoryOptions button"
-                        )
-                        .forEach(btn =>
-                            btn.classList.remove(
-                                "selected"
-                            )
-                        );
-
-                    button.classList.add(
-                        "selected"
-                    );
-
-                    quizCategory =
-                        button.dataset.value;
-                }
-            );
-
-        });
-
-
-    document
-        .querySelectorAll(
-            "#difficultyOptions button"
-        )
-        .forEach(button => {
-
-            button.addEventListener(
-                "click",
-                () => {
-
-                    document
-                        .querySelectorAll(
-                            "#difficultyOptions button"
-                        )
-                        .forEach(btn =>
-                            btn.classList.remove(
-                                "selected"
-                            )
-                        );
-
-                    button.classList.add(
-                        "selected"
-                    );
-
-                    quizDifficulty =
-                        Number(
-                            button.dataset.value
-                        );
-                }
-            );
-
-        });
-
-
-    get("quizButton")
-        .addEventListener(
-            "click",
-            showQuizResult
-        );
-}
-
-
-function showQuizResult() {
-
-    const result =
-        get("quizResult");
-
-
-    if (
-        quizCategory === null ||
-        quizDifficulty === null
-    ) {
-
-        result.textContent =
-            "Please answer both questions first.";
-
-        return;
-    }
-
-
-    const matches =
-        moneyIdeas.filter(idea => {
-
-            return (
-                idea.category ===
-                quizCategory &&
-                idea.difficulty <=
-                quizDifficulty
-            );
-
-        });
-
-
-    if (matches.length === 0) {
-
-        result.textContent =
-            "No perfect matches found. Try the Medium or Hard option.";
-
-        return;
-    }
-
-
-    const topMatches =
-        matches.slice(0, 3);
-
-
-    result.innerHTML = `
-        <strong>🎯 Your best matches:</strong>
-        <br><br>
-        ${topMatches
-            .map(idea =>
-                `${idea.icon} ${idea.name}`
-            )
-            .join("<br>")}
     `;
 
-
-    addXP(25);
 }
+
+
+calculateBtn.addEventListener(
+    "click",
+    calculateMoney
+);
 
 
 /* =========================================
    DARK MODE
-========================================= */
+   ========================================= */
 
-function setupDarkMode() {
+function setDarkMode(enabled) {
 
-    const saved =
-        localStorage.getItem(
-            "teenMoneyDark"
+    document.body.classList.toggle(
+        "dark",
+        enabled
+    );
+
+
+    if (enabled) {
+
+        darkModeBtn.textContent = "☀️";
+
+        localStorage.setItem(
+            "teenMoneyDarkMode",
+            "true"
         );
 
+    } else {
 
-    if (saved === "true") {
+        darkModeBtn.textContent = "🌙";
 
-        document.body.classList.add("dark");
+        localStorage.setItem(
+            "teenMoneyDarkMode",
+            "false"
+        );
 
-        get("darkModeBtn").textContent =
-            "☀️";
     }
 
-
-    get("darkModeBtn")
-        .addEventListener(
-            "click",
-            () => {
-
-                document.body
-                    .classList
-                    .toggle("dark");
+}
 
 
-                const isDark =
-                    document.body
-                        .classList
-                        .contains("dark");
+darkModeBtn.addEventListener(
+    "click",
+    () => {
+
+        const enabled =
+            !document.body.classList.contains("dark");
+
+        setDarkMode(enabled);
+
+    }
+);
 
 
-                localStorage.setItem(
-                    "teenMoneyDark",
-                    isDark
-                );
+/* =========================================
+   LOAD SAVED DARK MODE
+   ========================================= */
+
+const savedDarkMode =
+    localStorage.getItem("teenMoneyDarkMode");
 
 
-                get("darkModeBtn")
-                    .textContent =
-                    isDark
-                        ? "☀️"
-                        : "🌙";
+if (savedDarkMode === "true") {
 
+    setDarkMode(true);
 
-                addXP(5);
-            }
-        );
 }
 
 
 /* =========================================
-   XP
-========================================= */
+   START WEBSITE
+   ========================================= */
 
-let xp = 0;
+setupPlanner();
 
-
-function setupXP() {
-
-    xp =
-        Number(
-            localStorage.getItem(
-                "teenMoneyXP"
-            )
-        ) || 0;
-
-    updateXP();
-}
-
-
-function addXP(amount) {
-
-    xp += amount;
-
-    localStorage.setItem(
-        "teenMoneyXP",
-        xp
-    );
-
-    updateXP();
-}
-
-
-function updateXP() {
-
-    const level =
-        Math.floor(xp / 100) + 1;
-
-    const currentXP =
-        xp % 100;
-
-
-    get("userLevel").textContent =
-        level;
-
-    get("xpText").textContent =
-        `${currentXP} / 100 XP`;
-
-    get("xpBar").style.width =
-        `${currentXP}%`;
-}
-
-
-/* =========================================
-   MONEY FORMAT
-========================================= */
-
-function formatMoney(amount) {
-
-    return (
-        Math.round(amount)
-            .toLocaleString("da-DK") +
-        " kr"
-    );
-}
+updateJobs();
