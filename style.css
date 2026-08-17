@@ -877,3 +877,32 @@ body.dark .planner {
     }
 }
 ```
+/* ===== JOB GRID FIX ===== */
+
+#jobsContainer {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 20px !important;
+    width: 100% !important;
+}
+
+#jobsContainer .job-card {
+    width: 100% !important;
+    min-width: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+/* TABLET */
+@media (max-width: 1000px) {
+    #jobsContainer {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+}
+
+/* PHONE */
+@media (max-width: 650px) {
+    #jobsContainer {
+        grid-template-columns: 1fr !important;
+    }
+}
