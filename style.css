@@ -1,3 +1,4 @@
+```css
 * {
     box-sizing: border-box;
     margin: 0;
@@ -16,8 +17,9 @@ body {
     transition: 0.3s;
 }
 
-
-/* NAVBAR */
+/* =========================================
+   NAVBAR
+   ========================================= */
 
 .navbar {
     position: sticky;
@@ -72,8 +74,9 @@ body {
     font-size: 18px;
 }
 
-
-/* HERO */
+/* =========================================
+   HERO
+   ========================================= */
 
 .hero {
     min-height: 560px;
@@ -162,8 +165,9 @@ body {
     transform: translateY(-2px);
 }
 
-
-/* SECTIONS */
+/* =========================================
+   SECTIONS
+   ========================================= */
 
 .section {
     max-width: 1200px;
@@ -195,8 +199,9 @@ body {
     color: #68718a;
 }
 
-
-/* CONTROLS */
+/* =========================================
+   CONTROLS
+   ========================================= */
 
 .controls {
     display: flex;
@@ -262,46 +267,55 @@ body {
     margin-bottom: 12px;
 }
 
-
-/* JOBS */
+/* =========================================
+   JOB GRID
+   ========================================= */
 
 .jobs-container {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-}
-
-.job-card {
     display: grid;
 
-    grid-template-columns: 80px 1fr 180px 150px 220px;
-
-    align-items: center;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
 
     gap: 20px;
 
+    width: 100%;
+}
+
+/* =========================================
+   JOB CARD
+   ========================================= */
+
+.job-card {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
     padding: 20px;
 
     background: white;
 
     border: 1px solid #e2e6ef;
-
     border-radius: 18px;
 
     box-shadow: 0 5px 20px rgba(20, 30, 60, 0.05);
 
-    transition: 0.2s;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 .job-card:hover {
-    transform: translateY(-3px);
+    transform: translateY(-4px);
 
-    box-shadow: 0 10px 30px rgba(20, 30, 60, 0.09);
+    box-shadow:
+        0 10px 30px rgba(20, 30, 60, 0.10);
 }
 
+/* JOB ICON */
+
 .job-icon {
-    width: 70px;
-    height: 70px;
+    width: 65px;
+    height: 65px;
 
     display: flex;
     align-items: center;
@@ -311,32 +325,56 @@ body {
 
     border-radius: 16px;
 
-    font-size: 36px;
+    font-size: 34px;
+
+    margin-bottom: 15px;
+}
+
+/* JOB INFORMATION */
+
+.job-info {
+    flex: 1;
 }
 
 .job-info h3 {
     font-size: 20px;
-    margin-bottom: 5px;
+    margin-bottom: 6px;
 }
 
 .job-info p {
     color: #68718a;
+
     font-size: 14px;
+
+    line-height: 1.5;
+}
+
+/* MONEY + TIME */
+
+.job-meta {
+    margin-top: 18px;
 }
 
 .job-meta strong {
     display: block;
+
     color: #00ad56;
+
     font-size: 16px;
 }
 
 .job-meta span {
     color: #68718a;
+
     font-size: 13px;
 }
 
+/* =========================================
+   DIFFICULTY
+   ========================================= */
+
 .difficulty {
-    text-align: left;
+    margin-top: 18px;
 }
 
 .difficulty-title {
@@ -351,7 +389,6 @@ body {
 
 .difficulty-bar {
     height: 8px;
-
     width: 100%;
 
     background: #e9ebf2;
@@ -365,6 +402,7 @@ body {
 
 .difficulty-fill {
     height: 100%;
+
     border-radius: 20px;
 }
 
@@ -380,6 +418,8 @@ body {
     font-size: 11px;
     font-weight: 800;
 }
+
+/* DIFFICULTY COLORS */
 
 .easy {
     color: #00a653;
@@ -429,8 +469,9 @@ body {
     background: #ffd3df;
 }
 
-
-/* NO RESULTS */
+/* =========================================
+   NO RESULTS
+   ========================================= */
 
 .no-results {
     display: none;
@@ -442,8 +483,9 @@ body {
     color: #68718a;
 }
 
-
-/* PLANNER */
+/* =========================================
+   PLANNER
+   ========================================= */
 
 .planner-section {
     padding: 90px 20px;
@@ -540,8 +582,9 @@ body {
     color: #00a653;
 }
 
-
-/* TIPS */
+/* =========================================
+   TIPS
+   ========================================= */
 
 .tips-grid {
     display: grid;
@@ -577,8 +620,9 @@ body {
     font-size: 14px;
 }
 
-
-/* ABOUT */
+/* =========================================
+   ABOUT
+   ========================================= */
 
 .about-section {
     padding: 90px 20px;
@@ -604,8 +648,9 @@ body {
     margin-bottom: 15px;
 }
 
-
-/* FOOTER */
+/* =========================================
+   FOOTER
+   ========================================= */
 
 footer {
     background: #0b0f25;
@@ -619,6 +664,7 @@ footer {
 
 .footer-logo {
     font-size: 23px;
+
     font-weight: 900;
 
     margin-bottom: 8px;
@@ -630,14 +676,17 @@ footer p {
 
 .copyright {
     margin-top: 20px;
+
     font-size: 13px;
 }
 
-
-/* DARK MODE */
+/* =========================================
+   DARK MODE
+   ========================================= */
 
 body.dark {
     background: #0b1023;
+
     color: #f3f5ff;
 }
 
@@ -647,6 +696,7 @@ body.dark .search-box,
 body.dark .controls select,
 body.dark .secondary-btn {
     background: #151b35;
+
     color: white;
 
     border-color: #293150;
@@ -661,6 +711,7 @@ body.dark .about-box p {
 
 body.dark .search-box input {
     background: transparent;
+
     color: white;
 }
 
@@ -678,11 +729,13 @@ body.dark .hero p {
 
 body.dark .planner {
     background: #151b35;
+
     color: white;
 }
 
-
-/* MOBILE */
+/* =========================================
+   TABLET
+   ========================================= */
 
 @media (max-width: 950px) {
 
@@ -694,13 +747,10 @@ body.dark .planner {
         display: none;
     }
 
-    .job-card {
-        grid-template-columns: 70px 1fr;
-    }
+    /* 2 CARDS PER ROW */
 
-    .job-meta,
-    .difficulty {
-        grid-column: 2;
+    .jobs-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .tips-grid {
@@ -708,15 +758,35 @@ body.dark .planner {
     }
 }
 
+/* =========================================
+   PHONE
+   ========================================= */
 
 @media (max-width: 650px) {
+
+    .hero {
+        min-height: 500px;
+
+        padding: 60px 18px;
+    }
 
     .hero h1 {
         font-size: 42px;
     }
 
+    .hero p {
+        font-size: 16px;
+    }
+
     .hero-buttons {
         flex-direction: column;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+        width: 100%;
+
+        text-align: center;
     }
 
     .controls {
@@ -727,20 +797,27 @@ body.dark .planner {
         width: 100%;
     }
 
+    /* 1 CARD PER ROW */
+
+    .jobs-container {
+        grid-template-columns: 1fr;
+
+        gap: 16px;
+    }
+
     .job-card {
-        grid-template-columns: 60px 1fr;
-        padding: 15px;
+        padding: 18px;
     }
 
     .job-icon {
-        width: 55px;
-        height: 55px;
-        font-size: 27px;
+        width: 58px;
+        height: 58px;
+
+        font-size: 29px;
     }
 
-    .job-meta,
-    .difficulty {
-        grid-column: 1 / -1;
+    .job-info h3 {
+        font-size: 19px;
     }
 
     .tips-grid {
@@ -750,4 +827,53 @@ body.dark .planner {
     .section-title h2 {
         font-size: 32px;
     }
+
+    .section {
+        padding: 65px 15px;
+    }
+
+    .planner-section {
+        padding: 65px 15px;
+    }
+
+    .planner {
+        padding: 20px;
+    }
 }
+
+/* =========================================
+   SMALL PHONES
+   ========================================= */
+
+@media (max-width: 400px) {
+
+    .logo {
+        font-size: 19px;
+    }
+
+    .dark-btn {
+        width: 38px;
+        height: 38px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .job-card {
+        padding: 15px;
+    }
+
+    .job-info h3 {
+        font-size: 18px;
+    }
+
+    .planner {
+        padding: 16px;
+    }
+
+    .planner-result strong {
+        font-size: 32px;
+    }
+}
+```
